@@ -1,0 +1,1167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>小涛的个人博客</title>
+    <meta name="author" content="小涛" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/head-portrait.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>小涛的个人博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;归档</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;类型</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;小涛的个人博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">类型</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div id="home-head">
+    <div
+        id="home-background"
+        ref="homeBackground"
+        data-images="/images/background.jpg"
+    ></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>小涛的个人博客</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div
+    id="home-posts-wrap"
+    ref="homePostsWrap"
+    class="home-posts-wrap-no-card"
+>
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2025/06/13/HEXO/">
+        <h2 class="post-title">我的第一篇笔记</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                默认分类
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/6/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><p><a target="_blank" rel="noopener" href="http://mihoyo.tanger.ltd/2020/08/25/%E5%A6%82%E4%BD%95%E5%B0%86hexo%E8%BF%81%E5%88%B0%E4%B8%80%E5%8F%B0%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A/">如何将hexo迁到一台新电脑上</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wild-bokeyuan/p/18008830">hexo个人博客的搭建 </a></p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://argvchs.github.io/">预览（小窝）</a>			<a href="(https://github.com/theme-particlex/hexo-theme-particlex)">下载</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.kaitaku.xyz/">预览（望月阁）</a>  		<a target="_blank" rel="noopener" href="https://github.com/theme-shoka-x/hexo-theme-shokaX">下载</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/themes/">预览（默然的小站）（有点东西）</a>		<a target="_blank" rel="noopener" href="https://github.com/TonyChenn/mdm">下载</a></li>
+</ol>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Hexo/" style="color: #03a9f4">Hexo</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%95%99%E7%A8%8B/" style="color: #00bcd4">教程</a>
+        </span>
+        
+    </div>
+    <a href="/2025/06/13/HEXO/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/06/13/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/">
+        <h2 class="post-title"></h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/6/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="资源整合"><a href="#资源整合" class="headerlink" title="资源整合"></a>资源整合</h2><p>1.<a target="_blank" rel="noopener" href="https://picsum.photos/">https://picsum.photos/</a>   输入指定尺寸随机生成图片 如：<a target="_blank" rel="noopener" href="https://picsum.photos/200/300">https://picsum.photos/200/300</a></p>
+<h3 id="学习网站："><a href="#学习网站：" class="headerlink" title="学习网站："></a>学习网站：</h3><h4 id="1-家具"><a href="#1-家具" class="headerlink" title="1.家具"></a>1.家具</h4><ul>
+<li>我要自学网</li>
+<li>CAD 自学网</li>
+</ul>
+<h4 id="2-编程"><a href="#2-编程" class="headerlink" title="2.编程"></a>2.编程</h4><ul>
+<li>前端：<ul>
+<li>W3Schools CSS教程</li>
+<li>MDN Web文档 (developer.mozilla.org)</li>
+<li>CSS-Tricks实用技巧</li>
+</ul>
+</li>
+</ul>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2025/06/13/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/04/16/%E5%B7%A5%E4%BD%9C/">
+        <h2 class="post-title"></h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/4/16
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><ul>
+<li>软件安装地址：\192.168.16.161\软件安装\64位电脑圆方安装流程</li>
+<li>代维共享：\172.16.2.180</li>
+<li>项目管理系统：<a target="_blank" rel="noopener" href="http://192.168.14.127:3450/">http://192.168.14.127:3450/</a></li>
+<li>三厂车间\192.168.88.11\生产数据\2024年\喷粉线(PA)\01月\23</li>
+</ul>
+<h4 id="软件报价："><a href="#软件报价：" class="headerlink" title="软件报价："></a>软件报价：</h4><ul>
+<li>spb尚品报价单</li>
+<li>wyb维意报价单</li>
+<li>mkb孖酷报价单</li>
+</ul>
+<h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><ul>
+<li>自攻螺丝引孔一般直径是3，深度是2</li>
+</ul>
+<h3 id="圆方"><a href="#圆方" class="headerlink" title="圆方"></a>圆方</h3><ul>
+<li>铣刀：ECOGSSETTINGS</li>
+</ul>
+<h3 id="车间"><a href="#车间" class="headerlink" title="车间"></a>车间</h3><ul>
+<li>工序:开料-封边-打孔-分拣-组装-修色-品检-打包</li>
+</ul>
+<h4 id="对接人"><a href="#对接人" class="headerlink" title="对接人"></a>对接人</h4><p><strong>三厂</strong></p>
+<ul>
+<li><p>物控中心&#x2F;物控一二三厂区&#x2F;整装部&#x2F;仓储运维组</p>
+<ul>
+<li>周光凤：叉车司机，询问货物</li>
+</ul>
+</li>
+<li><p>木工一二三厂&#x2F;木工三厂&#x2F;喷粉线&#x2F;前工序</p>
+<ul>
+<li>赖志辉班长</li>
+</ul>
+</li>
+<li><p>木工一二三厂&#x2F;木工三厂&#x2F;台面</p>
+<ul>
+<li>李根</li>
+</ul>
+</li>
+</ul>
+<p><strong>五厂</strong></p>
+<ul>
+<li><p>五厂门板：喷粉在5楼</p>
+<ul>
+<li>一楼开料–&gt;板件堆放四楼–&gt;封边–&gt;钻孔</li>
+<li>一楼开料：杨昌银</li>
+<li>一楼车间对接：阮梅灵，魏春利</li>
+<li>四楼封边打孔：蒋秋艳</li>
+</ul>
+</li>
+<li><p>五厂门板&#x2F;门板一部&#x2F;新品线：</p>
+<ul>
+<li>王寿坤（高级主任）：约时间换刀</li>
+<li>邓志伟（主任，4楼）：安排换刀人员</li>
+<li>孔财旺（班长，4楼）：催入库</li>
+<li>李华婷（代班长）：门板厂吸塑包装和入库（后工序）</li>
+<li>梁坤兰：二楼吸塑前工序</li>
+<li>蒋军林：4楼堆放位置</li>
+<li>覃永龙（5楼，铝框线）</li>
+</ul>
+</li>
+<li><p>领料：二期车间小样板仓库 在栽纸机隔壁  凌小妹（三楼）</p>
+</li>
+</ul>
+<h4 id="生产"><a href="#生产" class="headerlink" title="生产"></a>生产</h4><ul>
+<li><p>UV板最迟   5天</p>
+</li>
+<li><p>拼框门：打孔–&gt;拼框–&gt;吸塑</p>
+</li>
+</ul>
+<h4 id="刀具"><a href="#刀具" class="headerlink" title="刀具"></a>刀具</h4><ul>
+<li>开侧孔车间刀具只有直径8mm的</li>
+<li>二阶梯孔位五厂车间用10mm直刀，锣出来的</li>
+</ul>
+<h4 id="生产厂区：（一期，二期，三期，门板厂区）"><a href="#生产厂区：（一期，二期，三期，门板厂区）" class="headerlink" title="生产厂区：（一期，二期，三期，门板厂区）"></a>生产厂区：（一期，二期，三期，门板厂区）</h4><ul>
+<li><p>49尺在门板厂区</p>
+</li>
+<li><p>48尺正常区</p>
+</li>
+<li><p>测试梯度测试</p>
+</li>
+</ul>
+<h3 id="研发记过来的刀具"><a href="#研发记过来的刀具" class="headerlink" title="研发记过来的刀具"></a>研发记过来的刀具</h3><ul>
+<li>层板阶梯孔刀具：尺寸11x12.5+14x70R</li>
+</ul>
+<h3 id="五厂三期"><a href="#五厂三期" class="headerlink" title="五厂三期"></a>五厂三期</h3><ul>
+<li>门板厂主任：姚丽城</li>
+</ul>
+<h3 id="产品开发"><a href="#产品开发" class="headerlink" title="产品开发"></a>产品开发</h3><h4 id="项目节点表"><a href="#项目节点表" class="headerlink" title="项目节点表"></a>项目节点表</h4><table>
+<thead>
+<tr>
+<th align="center">节点</th>
+<th align="center">01项目拆解</th>
+<th align="center">02物料准备</th>
+<th align="center">03方案阶段</th>
+<th align="center">04深化阶段</th>
+<th align="center">05模型阶段</th>
+<th align="center">06生产阶段</th>
+<th align="center">07发货安装</th>
+<th align="center">08文件总结</th>
+<th align="center">09首批试产</th>
+<th align="center">10量产移交</th>
+<th align="center">11辅助阶段</th>
+<th align="center">12上市签发</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">01接受分解</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">02拆解发布</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">03物料请购单</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">04下单请购</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">05到货时间确定</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">06物料确定BOM</td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">07数据分析</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">08测试方案</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">09方案制定</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">10方案定稿</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">11方案整理</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">12量尺</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">13方案深化</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">14文件核对</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">15墙柜核价</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">16产品建模</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">17参数化制作</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">18下单排产</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">19墙柜拆单</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">20墙柜建模</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">21拆单</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">22特殊下单排产</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">23特殊排产信息</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">24正常生产跟进</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">25特殊生产跟进</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">26设备调试</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">27样板发货</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">28自提发货</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">29常规安装</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">30特殊安装</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">31组织评审</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">32产品价格BOM</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">33技术文件</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">34打样总结</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">35打样阶段量产评估报告</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">36测试总结</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">37技术文件更新</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">38参数化对接</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">39小批试产结果</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">40全厂区试产结果</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">41文件审核</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">42现场管理</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">43完成核对</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">√</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="测试方案"><a href="#测试方案" class="headerlink" title="测试方案"></a>测试方案</h3><ul>
+<li><p>产品容差： </p>
+<ul>
+<li>公差（正负多少）<br>  1.开料误差<br>  2.开孔误差</li>
+</ul>
+</li>
+<li><p>实际柜体测量误差值</p>
+</li>
+<li><p>报价</p>
+</li>
+<li><p>评审</p>
+</li>
+</ul>
+<h2 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h2><p><strong>4.18会议有聊</strong></p>
+<ul>
+<li>新人阶段结束：<ul>
+<li>暂时了解 ：设计（方案设计，产品设计等等）–&gt;样板–&gt;安装生产（空间打样）</li>
+<li>目前阶段给的方向是样板方向“大帮”（方向设计“三年沉淀”），持续沟通交流（领导可能忘）</li>
+<li>点，网概念（网的范围太广，直到太多容易无法深入，建议深入点（点里面构成小网））</li>
+</ul>
+</li>
+</ul>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2025/04/16/%E5%B7%A5%E4%BD%9C/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/04/16/CAD%E6%93%8D%E4%BD%9C/">
+        <h2 class="post-title"></h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/4/16
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="CAD"><a href="#CAD" class="headerlink" title="CAD"></a>CAD</h1><h2 id="CAD快捷命令"><a href="#CAD快捷命令" class="headerlink" title="CAD快捷命令"></a>CAD快捷命令</h2><h3 id="标注命令"><a href="#标注命令" class="headerlink" title="标注命令"></a>标注命令</h3><p>CAD尺寸标注快捷键：<br>1、直线标注（DLI）<br>2、对齐标注（DAL）<br>3、半径标注（DRA）<br>4、直径标注（DDI）<br>5、角度标注（DAN）<br>6、中心标注（DCE）<br>7、点标注（DOR）<br>8、标注形位公差（TOL）<br>9、快速引出标注（LE）<br>10、基线标注（DBA）<br>11、连续标注（DCO）<br>12、标注样式（D）</p>
+<h2 id="CAD问题"><a href="#CAD问题" class="headerlink" title="CAD问题"></a>CAD问题</h2><h3 id="CAD2014在按下正交键时卡住并显示多次正交"><a href="#CAD2014在按下正交键时卡住并显示多次正交" class="headerlink" title="CAD2014在按下正交键时卡住并显示多次正交"></a>CAD2014在按下正交键时卡住并显示多次正交</h3><p><strong>设置tempoverrideS&#x3D;0</strong>‌：</p>
+<ul>
+<li>在命令行输入 <code>tempoverrideS</code>，回车确认。</li>
+<li>将值修改为0，回车确认即可‌。</li>
+</ul>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2025/04/16/CAD%E6%93%8D%E4%BD%9C/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    
+    <span class="current">1</span>
+    
+    
+    
+    
+</div>
+
+    </div>
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 小涛的个人博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;小涛
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+</body>
+</html>

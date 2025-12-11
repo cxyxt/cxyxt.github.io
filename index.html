@@ -164,310 +164,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/08/%E5%89%8D%E7%AB%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小涛">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小涛的个人博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 小涛的个人博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/10/08/%E5%89%8D%E7%AB%AF/" class="post-title-link" itemprop="url">前端</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-10-08 11:07:59" itemprop="dateCreated datePublished" datetime="2025-10-08T11:07:59+08:00">2025-10-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-09-26 14:14:50" itemprop="dateModified" datetime="2025-09-26T14:14:50+08:00">2025-09-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li><ul>
-<li>F12 控制台输入，接触禁止粘贴</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 移除所有 input 和 textarea 元素的 onpaste 属性</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;input, textarea&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">    element.<span class="property">onpaste</span> = <span class="literal">null</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除所有 input 和 textarea 元素的 paste 事件监听器（更彻底）</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;input, textarea&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">    element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;paste&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">        e.<span class="title function_">stopImmediatePropagation</span>();</span><br><span class="line">    &#125;, <span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;粘贴限制已尝试解除，请尝试粘贴。&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/28/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小涛">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小涛的个人博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 小涛的个人博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/07/28/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/" class="post-title-link" itemprop="url">资源整合</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-07-28 14:00:00" itemprop="dateCreated datePublished" datetime="2025-07-28T14:00:00+08:00">2025-07-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-12-11 14:09:49" itemprop="dateModified" datetime="2025-12-11T14:09:49+08:00">2025-12-11</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="资源整合"><a href="#资源整合" class="headerlink" title="资源整合"></a>资源整合</h2><h3 id="随机图片"><a href="#随机图片" class="headerlink" title="随机图片"></a>随机图片</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://picsum.photos/">https://picsum.photos/</a>   输入指定尺寸随机生成图片 如：<a target="_blank" rel="noopener" href="https://picsum.photos/200/300">https://picsum.photos/200/300</a></li>
-</ul>
-<h3 id="GitHub汉化"><a href="#GitHub汉化" class="headerlink" title="GitHub汉化"></a>GitHub汉化</h3><p>1、安装浏览器扩展 Tampermonkey<br>2、安装 github-chinese 脚本：</p>
-<ul>
-<li>打开项目地址：<a target="_blank" rel="noopener" href="https://github.com/maboloshi/github-chinese%E7%82%B9%E5%87%BB">https://github.com/maboloshi/github-chinese点击</a> main.user.js 文件:</li>
-<li>在弹出的页面点击 “Raw”，跳转到一个 Tampermonkey 的 js 的脚本安装界面，然后在弹出的界面点击安装按钮</li>
-</ul>
-<h3 id="常用符号"><a href="#常用符号" class="headerlink" title="常用符号"></a>常用符号</h3><p>右箭头：→</p>
-<p>长右箭头：➔</p>
-<p>粗右箭头：➙</p>
-<p>双线右箭头：⇒</p>
-<p>空心右箭头：⇨</p>
-<p>弯曲右箭头：⇴</p>
-<p>数字：①②③④⑤⑥⑦⑧⑨</p>
-<h2 id="学习网站："><a href="#学习网站：" class="headerlink" title="学习网站："></a>学习网站：</h2><h3 id="1-家具"><a href="#1-家具" class="headerlink" title="1.家具"></a>1.家具</h3><ul>
-<li>我要自学网</li>
-<li>CAD 自学网</li>
-</ul>
-<h3 id="2-编程"><a href="#2-编程" class="headerlink" title="2.编程"></a>2.编程</h3><ul>
-<li>前端：<ul>
-<li>W3Schools CSS教程</li>
-<li>MDN Web文档 (developer.mozilla.org)</li>
-<li>CSS-Tricks实用技巧</li>
-</ul>
-</li>
-</ul>
-<h2 id="好用的软件"><a href="#好用的软件" class="headerlink" title="好用的软件"></a>好用的软件</h2><h3 id="电脑"><a href="#电脑" class="headerlink" title="电脑"></a>电脑</h3><p>好用的电脑软件</p>
-<p>1.文件快速搜索 - Everything</p>
-<p>2.截图与贴图<br>Snipaste：神器！不只是截图，它的“贴图”功能可以将截图贴在屏幕最上层，方便对照输入或参考。功能细致入微，免费无广告。</p>
-<p>3.剪贴板增强 - Ditto<br>特点：记录你所有复制过的历史记录，需要时按Ctrl + ~呼出，选择粘贴。复制多条内容再统一粘贴的效率利器。</p>
-<p>4.笔记与知识管理<br>Notion： All-in-One 的工作空间。不仅仅是笔记，它可以用来做Wiki知识库、项目管理、表格数据库等等，自由度极高。适合构建个人或团队的知识体系。</p>
-<h2 id="教育资源"><a href="#教育资源" class="headerlink" title="教育资源"></a>教育资源</h2><p><a target="_blank" rel="noopener" href="https://github.com/TapXWorld/ChinaTextbook">https://github.com/TapXWorld/ChinaTextbook</a><br>ChinaTextbooChinaTextbook，一个在GitHub上托管的开源项目，致力于汇聚中国小学、初中、高中及大学的公开PDF教材。其总库容量高达41.53GB，为教育工作者和学者提供了一个便捷的教材获取平台。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/28/%E4%BA%94%E9%87%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小涛">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小涛的个人博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 小涛的个人博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/07/28/%E4%BA%94%E9%87%91/" class="post-title-link" itemprop="url">五金</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-07-28 14:00:00" itemprop="dateCreated datePublished" datetime="2025-07-28T14:00:00+08:00">2025-07-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-11-21 11:43:11" itemprop="dateModified" datetime="2025-11-21T11:43:11+08:00">2025-11-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="五金"><a href="#五金" class="headerlink" title="五金"></a>五金</h2><ol>
-<li>三合一<ul>
-<li>螺杆<ul>
-<li>侧板开孔：Ф10x12</li>
-<li>层板开孔：Ф8x25</li>
-</ul>
-</li>
-<li>螺帽<ul>
-<li>层板开孔：Ф15x13.5</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>圆榫<ul>
-<li>侧板开孔：Ф8x20</li>
-<li>层板开孔：Ф8x12在反面</li>
-</ul>
-</li>
-</ol>
-<h2 id="审核图纸"><a href="#审核图纸" class="headerlink" title="审核图纸"></a>审核图纸</h2><p>审图纸：<br>1.对着图纸，量一下实物，尺寸对不对得上；<br>2.看配件与家具装配的位置、孔位对不对得上；<br>3.品质要求所有的尺寸都要有公差的，不是单个标的，就给一个整体尺寸公差表；</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/28/SolidWorks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -486,7 +182,10 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/07/28/SolidWorks/" class="post-title-link" itemprop="url">SolidWorks</a>
+          
+              <span class="post-sticky-flag" title="Sticky">
+                <i class="fa fa-thumbtack"></i>
+              </span><a href="/2025/07/28/SolidWorks/" class="post-title-link" itemprop="url">SolidWorks</a>
         </h2>
 
         <div class="post-meta-container">
@@ -504,7 +203,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-12-11 14:10:20" itemprop="dateModified" datetime="2025-12-11T14:10:20+08:00">2025-12-11</time>
+      <time title="Modified: 2025-12-11 14:21:39" itemprop="dateModified" datetime="2025-12-11T14:21:39+08:00">2025-12-11</time>
     </span>
 
   
@@ -595,109 +294,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/28/%E5%AE%B6%E5%85%B7%E7%9F%A5%E8%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小涛">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小涛的个人博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 小涛的个人博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/07/28/%E5%AE%B6%E5%85%B7%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">家具知识</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-07-28 14:00:00" itemprop="dateCreated datePublished" datetime="2025-07-28T14:00:00+08:00">2025-07-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-11-14 15:53:25" itemprop="dateModified" datetime="2025-11-14T15:53:25+08:00">2025-11-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><ul>
-<li>The Wood Database        网址： <a target="_blank" rel="noopener" href="http://www.wood-database.com/">www.wood-database.com</a>  </li>
-<li>木工爱好者论坛                 网址： <a target="_blank" rel="noopener" href="http://www.zuojiaju.com/">www.zuojiaju.com</a> (作家居)</li>
-</ul>
-<h2 id="板材"><a href="#板材" class="headerlink" title="板材"></a>板材</h2><ul>
-<li><p>▷中纤板，也叫密度板<br>适用于：柜门&#x2F;柜体，可以做烤漆面、三氨纸面、模压面<br>优点：材料表面平整度高，可做造型、价格低、易加工<br>缺点：防水、防潮性能差、环保性相对低、握钉力一般</p>
-</li>
-<li><p>▷颗粒板，也叫定向刨花板&#x2F;蔗渣板，主要是木屑压制而成。<br>适用于：柜门&#x2F;柜体，可以做烤漆面、三氨纸面、PET面<br>优点：性价比高、做门板稳定性较好、易加工、不易变形<br>缺点：防潮性能较差、环保性能一般、握钉力一般</p>
-</li>
-<li><p>▷欧松板，是用采用较大的刨片，片状为主颗粒状为辅。<br>适用于：柜门&#x2F;柜体，可以做烤漆面、三氨纸面、PET面<br>优点：环保性能高、做门板稳定性强、不易变形防潮性较好、握钉力较强<br>缺点：防潮性能一般、价格相对比颗粒板高</p>
-</li>
-<li><p>▷多层板，是由三层或多层单板或薄板交叉胶贴热压而成。<br>适用于：短柜门&#x2F;柜体，可以做烤漆面、三氨纸面<br>优点：环保性能较高、做柜体稳定性强、防潮性好、握钉力强<br>缺点：不适合做长门板易变形</p>
-</li>
-<li><p>▷实木芯板，也叫大芯板&#x2F;生态板，是由天然木材烘干加工成木条后拼接而成。<br>适用于：柜门&#x2F;柜体，主要做三氨纸面<br>优点：环保性能较高、做柜体柜门稳定性强、防潮性好、握钉力强<br>缺点：竖向抗压性差</p>
-</li>
-<li><p>▷泰国橡胶木免漆板，也叫橡木板&#x2F;指接板，是由天然木材烘干加工成木条后拼接而成。<br>适用于：柜体，主要做三氨纸面<br>优点：环保性能高、做柜体稳定性强、防潮性好、握钉力强、不容易开裂<br>缺点：价格高</p>
-</li>
-</ul>
-<p><img src="https://pics0.baidu.com/feed/14ce36d3d539b6005983629bbca87e27c75cb756.jpeg?token=ed8e0bc496f2c91529c41dc4c1b60905" alt="img"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/16/%E5%B7%A5%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -716,7 +312,10 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/04/16/%E5%B7%A5%E4%BD%9C/" class="post-title-link" itemprop="url">工作</a>
+          
+              <span class="post-sticky-flag" title="Sticky">
+                <i class="fa fa-thumbtack"></i>
+              </span><a href="/2025/04/16/%E5%B7%A5%E4%BD%9C/" class="post-title-link" itemprop="url">工作</a>
         </h2>
 
         <div class="post-meta-container">
@@ -734,7 +333,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-12-04 09:18:54" itemprop="dateModified" datetime="2025-12-04T09:18:54+08:00">2025-12-04</time>
+      <time title="Modified: 2025-12-11 14:21:20" itemprop="dateModified" datetime="2025-12-11T14:21:20+08:00">2025-12-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1594,6 +1193,416 @@
 </ul>
 </li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/11/14/%E5%AE%B6%E5%85%B7%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小涛的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 小涛的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+              <span class="post-sticky-flag" title="Sticky">
+                <i class="fa fa-thumbtack"></i>
+              </span><a href="/2025/11/14/%E5%AE%B6%E5%85%B7%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">家具知识</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-11-14 15:54:41" itemprop="dateCreated datePublished" datetime="2025-11-14T15:54:41+08:00">2025-11-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-12-11 14:21:04" itemprop="dateModified" datetime="2025-12-11T14:21:04+08:00">2025-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><ul>
+<li>The Wood Database        网址： <a target="_blank" rel="noopener" href="http://www.wood-database.com/">www.wood-database.com</a>  </li>
+<li>木工爱好者论坛                 网址： <a target="_blank" rel="noopener" href="http://www.zuojiaju.com/">www.zuojiaju.com</a> (作家居)</li>
+</ul>
+<h2 id="板材"><a href="#板材" class="headerlink" title="板材"></a>板材</h2><ul>
+<li><p>▷中纤板，也叫密度板<br>适用于：柜门&#x2F;柜体，可以做烤漆面、三氨纸面、模压面<br>优点：材料表面平整度高，可做造型、价格低、易加工<br>缺点：防水、防潮性能差、环保性相对低、握钉力一般</p>
+</li>
+<li><p>▷颗粒板，也叫定向刨花板&#x2F;蔗渣板，主要是木屑压制而成。<br>适用于：柜门&#x2F;柜体，可以做烤漆面、三氨纸面、PET面<br>优点：性价比高、做门板稳定性较好、易加工、不易变形<br>缺点：防潮性能较差、环保性能一般、握钉力一般</p>
+</li>
+<li><p>▷欧松板，是用采用较大的刨片，片状为主颗粒状为辅。<br>适用于：柜门&#x2F;柜体，可以做烤漆面、三氨纸面、PET面<br>优点：环保性能高、做门板稳定性强、不易变形防潮性较好、握钉力较强<br>缺点：防潮性能一般、价格相对比颗粒板高</p>
+</li>
+<li><p>▷多层板，是由三层或多层单板或薄板交叉胶贴热压而成。<br>适用于：短柜门&#x2F;柜体，可以做烤漆面、三氨纸面<br>优点：环保性能较高、做柜体稳定性强、防潮性好、握钉力强<br>缺点：不适合做长门板易变形</p>
+</li>
+<li><p>▷实木芯板，也叫大芯板&#x2F;生态板，是由天然木材烘干加工成木条后拼接而成。<br>适用于：柜门&#x2F;柜体，主要做三氨纸面<br>优点：环保性能较高、做柜体柜门稳定性强、防潮性好、握钉力强<br>缺点：竖向抗压性差</p>
+</li>
+<li><p>▷泰国橡胶木免漆板，也叫橡木板&#x2F;指接板，是由天然木材烘干加工成木条后拼接而成。<br>适用于：柜体，主要做三氨纸面<br>优点：环保性能高、做柜体稳定性强、防潮性好、握钉力强、不容易开裂<br>缺点：价格高</p>
+</li>
+</ul>
+<p><img src="https://pics0.baidu.com/feed/14ce36d3d539b6005983629bbca87e27c75cb756.jpeg?token=ed8e0bc496f2c91529c41dc4c1b60905" alt="img"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/08/%E5%89%8D%E7%AB%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小涛的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 小涛的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/10/08/%E5%89%8D%E7%AB%AF/" class="post-title-link" itemprop="url">前端</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-10-08 11:07:59" itemprop="dateCreated datePublished" datetime="2025-10-08T11:07:59+08:00">2025-10-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-09-26 14:14:50" itemprop="dateModified" datetime="2025-09-26T14:14:50+08:00">2025-09-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li><ul>
+<li>F12 控制台输入，接触禁止粘贴</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 移除所有 input 和 textarea 元素的 onpaste 属性</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;input, textarea&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">    element.<span class="property">onpaste</span> = <span class="literal">null</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除所有 input 和 textarea 元素的 paste 事件监听器（更彻底）</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;input, textarea&#x27;</span>).<span class="title function_">forEach</span>(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">    element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;paste&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">        e.<span class="title function_">stopImmediatePropagation</span>();</span><br><span class="line">    &#125;, <span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;粘贴限制已尝试解除，请尝试粘贴。&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/28/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小涛的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 小涛的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/28/%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/" class="post-title-link" itemprop="url">资源整合</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-07-28 14:00:00" itemprop="dateCreated datePublished" datetime="2025-07-28T14:00:00+08:00">2025-07-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-12-11 14:09:49" itemprop="dateModified" datetime="2025-12-11T14:09:49+08:00">2025-12-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="资源整合"><a href="#资源整合" class="headerlink" title="资源整合"></a>资源整合</h2><h3 id="随机图片"><a href="#随机图片" class="headerlink" title="随机图片"></a>随机图片</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://picsum.photos/">https://picsum.photos/</a>   输入指定尺寸随机生成图片 如：<a target="_blank" rel="noopener" href="https://picsum.photos/200/300">https://picsum.photos/200/300</a></li>
+</ul>
+<h3 id="GitHub汉化"><a href="#GitHub汉化" class="headerlink" title="GitHub汉化"></a>GitHub汉化</h3><p>1、安装浏览器扩展 Tampermonkey<br>2、安装 github-chinese 脚本：</p>
+<ul>
+<li>打开项目地址：<a target="_blank" rel="noopener" href="https://github.com/maboloshi/github-chinese%E7%82%B9%E5%87%BB">https://github.com/maboloshi/github-chinese点击</a> main.user.js 文件:</li>
+<li>在弹出的页面点击 “Raw”，跳转到一个 Tampermonkey 的 js 的脚本安装界面，然后在弹出的界面点击安装按钮</li>
+</ul>
+<h3 id="常用符号"><a href="#常用符号" class="headerlink" title="常用符号"></a>常用符号</h3><p>右箭头：→</p>
+<p>长右箭头：➔</p>
+<p>粗右箭头：➙</p>
+<p>双线右箭头：⇒</p>
+<p>空心右箭头：⇨</p>
+<p>弯曲右箭头：⇴</p>
+<p>数字：①②③④⑤⑥⑦⑧⑨</p>
+<h2 id="学习网站："><a href="#学习网站：" class="headerlink" title="学习网站："></a>学习网站：</h2><h3 id="1-家具"><a href="#1-家具" class="headerlink" title="1.家具"></a>1.家具</h3><ul>
+<li>我要自学网</li>
+<li>CAD 自学网</li>
+</ul>
+<h3 id="2-编程"><a href="#2-编程" class="headerlink" title="2.编程"></a>2.编程</h3><ul>
+<li>前端：<ul>
+<li>W3Schools CSS教程</li>
+<li>MDN Web文档 (developer.mozilla.org)</li>
+<li>CSS-Tricks实用技巧</li>
+</ul>
+</li>
+</ul>
+<h2 id="好用的软件"><a href="#好用的软件" class="headerlink" title="好用的软件"></a>好用的软件</h2><h3 id="电脑"><a href="#电脑" class="headerlink" title="电脑"></a>电脑</h3><p>好用的电脑软件</p>
+<p>1.文件快速搜索 - Everything</p>
+<p>2.截图与贴图<br>Snipaste：神器！不只是截图，它的“贴图”功能可以将截图贴在屏幕最上层，方便对照输入或参考。功能细致入微，免费无广告。</p>
+<p>3.剪贴板增强 - Ditto<br>特点：记录你所有复制过的历史记录，需要时按Ctrl + ~呼出，选择粘贴。复制多条内容再统一粘贴的效率利器。</p>
+<p>4.笔记与知识管理<br>Notion： All-in-One 的工作空间。不仅仅是笔记，它可以用来做Wiki知识库、项目管理、表格数据库等等，自由度极高。适合构建个人或团队的知识体系。</p>
+<h2 id="教育资源"><a href="#教育资源" class="headerlink" title="教育资源"></a>教育资源</h2><p><a target="_blank" rel="noopener" href="https://github.com/TapXWorld/ChinaTextbook">https://github.com/TapXWorld/ChinaTextbook</a><br>ChinaTextbooChinaTextbook，一个在GitHub上托管的开源项目，致力于汇聚中国小学、初中、高中及大学的公开PDF教材。其总库容量高达41.53GB，为教育工作者和学者提供了一个便捷的教材获取平台。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/07/28/%E4%BA%94%E9%87%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小涛的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 小涛的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/07/28/%E4%BA%94%E9%87%91/" class="post-title-link" itemprop="url">五金</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-07-28 14:00:00" itemprop="dateCreated datePublished" datetime="2025-07-28T14:00:00+08:00">2025-07-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-11-21 11:43:11" itemprop="dateModified" datetime="2025-11-21T11:43:11+08:00">2025-11-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="五金"><a href="#五金" class="headerlink" title="五金"></a>五金</h2><ol>
+<li>三合一<ul>
+<li>螺杆<ul>
+<li>侧板开孔：Ф10x12</li>
+<li>层板开孔：Ф8x25</li>
+</ul>
+</li>
+<li>螺帽<ul>
+<li>层板开孔：Ф15x13.5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>圆榫<ul>
+<li>侧板开孔：Ф8x20</li>
+<li>层板开孔：Ф8x12在反面</li>
+</ul>
+</li>
+</ol>
+<h2 id="审核图纸"><a href="#审核图纸" class="headerlink" title="审核图纸"></a>审核图纸</h2><p>审图纸：<br>1.对着图纸，量一下实物，尺寸对不对得上；<br>2.看配件与家具装配的位置、孔位对不对得上；<br>3.品质要求所有的尺寸都要有公差的，不是单个标的，就给一个整体尺寸公差表；</p>
 
       
     </div>

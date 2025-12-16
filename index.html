@@ -1504,7 +1504,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/12/16/CAD%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Untitled</a>
+          <a href="/2025/12/16/CAD%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">CAD系统学习</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1516,7 +1516,16 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-12-16 13:46:02 / Modified: 11:56:29" itemprop="dateCreated datePublished" datetime="2025-12-16T13:46:02+08:00">2025-12-16</time>
+      <time title="Created: 2025-12-16 13:46:02 / Modified: 14:45:54" itemprop="dateCreated datePublished" datetime="2025-12-16T13:46:02+08:00">2025-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">默认分类</span></a>
+        </span>
     </span>
 
   
@@ -2613,6 +2622,1315 @@
 </ul>
 </li>
 </ul>
+<h2 id="第五章-尺寸标注与公差标注"><a href="#第五章-尺寸标注与公差标注" class="headerlink" title="第五章 尺寸标注与公差标注"></a>第五章 尺寸标注与公差标注</h2><h3 id="5-1-尺寸标注的组成要素及基本要求"><a href="#5-1-尺寸标注的组成要素及基本要求" class="headerlink" title="5-1 尺寸标注的组成要素及基本要求"></a>5-1 尺寸标注的组成要素及基本要求</h3><ul>
+<li><strong>组成要素</strong>：<ul>
+<li><strong>标注文字</strong>：表达测量值，可包含前缀、后缀、公差。</li>
+<li><strong>尺寸线</strong>：指示标注方向和范围。</li>
+<li><strong>箭头（尺寸终端）</strong>：显示尺寸线两端。</li>
+<li><strong>尺寸界线（投影线）</strong>：从部件延伸到尺寸线。</li>
+<li><strong>中心标记</strong>：用于指示圆或对称中心。</li>
+</ul>
+</li>
+<li><strong>国家标准 (GB) 基本规定</strong>：<ul>
+<li>尺寸线、尺寸界线用细实线。</li>
+<li>尺寸线应平行于所标线段。轮廓线、中心线等<strong>不可</strong>作为尺寸线。</li>
+<li>同一图样尺寸终端形式应一致。</li>
+<li>尺寸数字一般注在尺寸线上方或中断处，字号一致。</li>
+<li>线性尺寸数字方向：水平朝上、竖直朝左、倾斜保持朝上趋势。</li>
+<li>角度数字一律水平书写。</li>
+<li>任何图线不得通过尺寸数字，必要时图线应断开。</li>
+</ul>
+</li>
+<li><strong>注意事项</strong>：<ul>
+<li>零件真实大小以标注数值为准，与图形比例无关。</li>
+<li>默认单位毫米(mm)，否则需注明。</li>
+<li>标注为最后完工尺寸。</li>
+<li>每一尺寸一般只标注一次，标注在最清晰反映该结构的视图上。</li>
+<li>功能尺寸直接注出；同一要素尺寸尽量集中标注。</li>
+<li>尽可能使用符号或缩写词。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2-线性标注与选项功能"><a href="#5-2-线性标注与选项功能" class="headerlink" title="5-2 线性标注与选项功能"></a>5-2 线性标注与选项功能</h3><ul>
+<li><strong>命令</strong>：<code>DIMLINEAR</code>，快捷键 <code>DLI</code></li>
+<li><strong>作用</strong>：标注两点间的水平或垂直距离。</li>
+<li><strong>操作步骤</strong>：激活命令 → 指定第一条和第二条尺寸界线原点或选择对象 → 指定尺寸线位置。</li>
+<li><strong>命令行选项</strong>：<ul>
+<li><code>多行文字(M)</code>：打开多行文字编辑器手动输入内容。</li>
+<li><code>文字(T)</code>：命令行输入单行文字。</li>
+<li><code>角度(A)</code>：旋转尺寸文字。</li>
+<li><code>水平(H)/垂直(V)</code>：强制标注水平或垂直尺寸。</li>
+<li><code>旋转(R)</code>：旋转尺寸线角度。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-3-对齐标注及练习"><a href="#5-3-对齐标注及练习" class="headerlink" title="5-3 对齐标注及练习"></a>5-3 对齐标注及练习</h3><ul>
+<li><strong>命令</strong>：<code>DIMALIGNED</code>，快捷键 <code>DAL</code></li>
+<li><strong>作用</strong>：创建平行于所选对象或两点连线的标注（用于倾斜图线）。</li>
+<li><strong>操作步骤</strong>：激活命令 → 指定尺寸界线原点或选择对象 → 指定尺寸线位置。</li>
+</ul>
+<h3 id="5-4-半径标注与直径标注"><a href="#5-4-半径标注与直径标注" class="headerlink" title="5-4 半径标注与直径标注"></a>5-4 半径标注与直径标注</h3><ul>
+<li><strong>半径标注</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMRADIUS</code>，快捷键 <code>DRA</code></li>
+<li><strong>操作</strong>：激活命令 → 选择圆弧或圆 → 指定尺寸线位置。</li>
+</ul>
+</li>
+<li><strong>直径标注</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMDIAMETER</code>，快捷键 <code>DDI</code></li>
+<li><strong>操作</strong>：激活命令 → 选择圆或圆弧 → 指定尺寸线位置。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-5-角度标注与角度格式"><a href="#5-5-角度标注与角度格式" class="headerlink" title="5-5 角度标注与角度格式"></a>5-5 角度标注与角度格式</h3><ul>
+<li><strong>命令</strong>：<code>DIMANGULAR</code>，快捷键 <code>DAN</code></li>
+<li><strong>作用</strong>：标注两线夹角或圆弧圆心角。</li>
+<li><strong>操作步骤</strong>：激活命令 → 选择两条直线或圆弧 → 指定标注弧线位置。</li>
+<li><strong>标注大于180°角</strong>：指定顶点 → 逆时针选择起点和端点。</li>
+<li><strong>角度格式设置</strong>：在标注样式管理器 → “主单位”选项卡中设置（十进制&#x2F;度分秒）。</li>
+</ul>
+<h3 id="5-6-弧长标注及练习"><a href="#5-6-弧长标注及练习" class="headerlink" title="5-6 弧长标注及练习"></a>5-6 弧长标注及练习</h3><ul>
+<li><strong>命令</strong>：<code>DIMARC</code>，快捷键 <code>DAR</code></li>
+<li><strong>作用</strong>：标注圆弧或多段线圆弧段的长度，文字前加弧长符号。</li>
+<li><strong>操作步骤</strong>：激活命令 → 选择弧线段 → 指定标注位置。</li>
+<li><strong>选项</strong>：<ul>
+<li><code>部分(P)</code>：标注部分弧长。</li>
+<li><code>引线(L)</code>：为尺寸文字添加指引线。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-7-坐标标注与折弯标注"><a href="#5-7-坐标标注与折弯标注" class="headerlink" title="5-7 坐标标注与折弯标注"></a>5-7 坐标标注与折弯标注</h3><ul>
+<li><strong>坐标标注</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMORDINATE</code>，快捷键 <code>DOR</code></li>
+<li><strong>作用</strong>：测量点的X或Y坐标值。</li>
+<li><strong>操作</strong>：先移动UCS原点 (<code>UCS</code> → <code>O</code>) → 激活命令 → 指定点 → 移动鼠标切换X&#x2F;Y值 → 指定引线端点。</li>
+</ul>
+</li>
+<li><strong>折弯标注</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMJOGGED</code>，快捷键 <code>DJO</code></li>
+<li><strong>作用</strong>：当圆弧中心位于布局外时，指定替代中心进行标注。</li>
+<li><strong>操作</strong>：激活命令 → 选择圆弧或圆 → 指定图示中心位置 → 指定尺寸线位置 → 指定折弯位置。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-8-创建标注样式与子样式"><a href="#5-8-创建标注样式与子样式" class="headerlink" title="5-8 创建标注样式与子样式"></a>5-8 创建标注样式与子样式</h3><ul>
+<li><strong>命令</strong>：<code>DIMSTYLE</code>，快捷键 <code>D</code></li>
+<li><strong>作用</strong>：创建和管理控制标注外观的样式。</li>
+<li><strong>创建步骤</strong>：激活命令打开管理器 → “新建” → 输入名称 → 设置参数 → 确定。</li>
+<li><strong>子样式</strong>：基于某样式创建，仅修改特定标注类型（如角度、半径）的参数，其余继承父样式。</li>
+<li><strong>其他功能</strong>：<ul>
+<li><strong>替代</strong>：临时修改当前样式参数，更换样式后失效。</li>
+<li><strong>比较</strong>：比较两个样式的差异。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-9-标注样式参数详解（上）"><a href="#5-9-标注样式参数详解（上）" class="headerlink" title="5-9 标注样式参数详解（上）"></a>5-9 标注样式参数详解（上）</h3><ul>
+<li><strong>线</strong>：<ul>
+<li><strong>尺寸线</strong>：颜色、线型、线宽、超出标记、基线间距、隐藏。</li>
+<li><strong>尺寸界线</strong>：颜色、线型、线宽、隐藏、超出尺寸线、起点偏移量、固定长度。</li>
+</ul>
+</li>
+<li><strong>符号和箭头</strong>：<ul>
+<li><strong>箭头</strong>：第一&#x2F;第二个箭头形状、引线箭头、箭头大小。</li>
+<li><strong>圆心标记</strong>：无、标记（十字）、直线（中心线）。</li>
+<li><strong>折断标注</strong>：折断大小。</li>
+<li><strong>弧长符号</strong>：标注文字的前缀&#x2F;上方&#x2F;无。</li>
+<li><strong>半径&#x2F;线性折弯标注</strong>：折弯角度、折弯高度因子。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-10-标注样式参数详解（下）"><a href="#5-10-标注样式参数详解（下）" class="headerlink" title="5-10 标注样式参数详解（下）"></a>5-10 标注样式参数详解（下）</h3><ul>
+<li><strong>文字</strong>：<ul>
+<li><strong>外观</strong>：文字样式、颜色、填充颜色、高度、分数高度比例、绘制文字边框。</li>
+<li><strong>位置</strong>：垂直&#x2F;水平位置、观察方向、从尺寸线偏移。</li>
+<li><strong>对齐</strong>：水平、与尺寸线对齐、ISO标准。</li>
+</ul>
+</li>
+<li><strong>调整</strong>：<ul>
+<li><strong>调整选项</strong>：当空间不足时，调整文字和箭头的位置策略。</li>
+<li><strong>文字位置</strong>：尺寸线旁边&#x2F;上方带引线&#x2F;上方不带引线。</li>
+<li><strong>标注特征比例</strong>：注释性、缩放到布局、使用全局比例。</li>
+<li><strong>优化</strong>：手动放置文字、在尺寸界线间绘制尺寸线。</li>
+</ul>
+</li>
+<li><strong>主单位</strong>：<ul>
+<li><strong>线性标注</strong>：单位格式、精度、分数格式、小数分隔符、舍入、前缀&#x2F;后缀。</li>
+<li><strong>测量单位比例</strong>：比例因子、仅应用到布局标注。</li>
+<li><strong>消零</strong>：前导&#x2F;后续零、英尺&#x2F;英寸消零。</li>
+<li><strong>角度标注</strong>：单位格式、精度、消零。</li>
+</ul>
+</li>
+<li><strong>换算单位</strong>：<ul>
+<li>用于显示双单位（如公制&#x2F;英制）。</li>
+<li>设置单位格式、精度、换算倍数、舍入、前缀&#x2F;后缀、消零、位置（主值后&#x2F;下）。</li>
+</ul>
+</li>
+<li><strong>公差</strong>：<ul>
+<li><strong>公差格式</strong>：方式（无&#x2F;对称&#x2F;极限偏差等）、精度、上&#x2F;下偏差、高度比例、垂直位置。</li>
+<li><strong>公差对齐</strong>：对齐小数分隔符&#x2F;运算符。</li>
+<li><strong>消零</strong>：前导&#x2F;后续零。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-11-创建机械制图标注样式"><a href="#5-11-创建机械制图标注样式" class="headerlink" title="5-11 创建机械制图标注样式"></a>5-11 创建机械制图标注样式</h3><ul>
+<li><strong>步骤</strong>：<ol>
+<li><strong>创建文字样式</strong>：<ul>
+<li>“正体0.0”：字体 <code>gbenor.shx</code>，大字体，高度0，宽度因子1。</li>
+<li>“斜体3.5”：字体 <code>gbeitc.shx</code>，大字体，高度3.5，宽度因子1。</li>
+<li>“符号”：字体 <code>gdt.shx</code>，大字体，高度2.5，宽度因子0.85。</li>
+</ul>
+</li>
+<li><strong>新建标注样式</strong>：“机械制图1”，基础样式 <code>ISO-25</code>。</li>
+<li><strong>关键参数设置</strong>：<ul>
+<li><strong>文字</strong>：样式“正体0.0”，颜色绿，高3.5；垂直-上，水平-居中，对齐-ISO标准。</li>
+<li><strong>符号和箭头</strong>：实心闭合箭头，大小3；圆心标记2.5；折断大小5.25；弧长符号-上方；半径折弯角度60°。</li>
+<li><strong>线</strong>：颜色绿；基线间距6；超出尺寸线2；起点偏移量0。</li>
+<li><strong>主单位</strong>：线性-小数，精度0.000，句点分隔符，消零-后续；角度-十进制度，精度0，消零-后续。</li>
+</ul>
+</li>
+<li><strong>创建子样式</strong>（用于线性、角度、半径、直径）：<ul>
+<li><strong>线性</strong>：调整选项-箭头；文字对齐-与尺寸线对齐。</li>
+<li><strong>角度</strong>：文字对齐-水平。</li>
+<li><strong>半径</strong>：优化-取消“在尺寸界线间绘制尺寸线”。</li>
+<li><strong>直径</strong>：调整选项-箭头。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-12-连续标注及练习"><a href="#5-12-连续标注及练习" class="headerlink" title="5-12 连续标注及练习"></a>5-12 连续标注及练习</h3><ul>
+<li><strong>命令</strong>：<code>DIMCONTINUE</code>，快捷键 <code>DCO</code></li>
+<li><strong>作用</strong>：创建首尾相连的系列标注（线性、角度或坐标）。</li>
+<li><strong>操作步骤</strong>：先创建一个基准标注 → 激活命令 → 依次指定后续尺寸界线原点 → 按 <code>ESC</code> 退出。</li>
+</ul>
+<h3 id="5-13-基线标注及练习"><a href="#5-13-基线标注及练习" class="headerlink" title="5-13 基线标注及练习"></a>5-13 基线标注及练习</h3><ul>
+<li><strong>命令</strong>：<code>DIMBASELINE</code>，快捷键 <code>DBA</code></li>
+<li><strong>作用</strong>：从同一基线测量多个标注。间距由标注样式中的“基线间距”控制。</li>
+<li><strong>操作步骤</strong>：先创建一个基准标注 → 激活命令 → 依次指定后续尺寸界线原点 → 按 <code>ESC</code> 退出。</li>
+</ul>
+<h3 id="5-14-线性直径与并列标注"><a href="#5-14-线性直径与并列标注" class="headerlink" title="5-14 线性直径与并列标注"></a>5-14 线性直径与并列标注</h3><ul>
+<li><strong>线性直径</strong>：用线性标注方式标注圆&#x2F;圆柱直径。<ul>
+<li><strong>创建样式</strong>：基于“机械制图1”新建样式，在主单位“前缀”中输入 <code>%%c</code>。</li>
+</ul>
+</li>
+<li><strong>并列标注</strong>：自中心向两侧发散的阶梯形标注，常用于同一方向多个线性直径。</li>
+</ul>
+<h3 id="5-15-快速标注及练习"><a href="#5-15-快速标注及练习" class="headerlink" title="5-15 快速标注及练习"></a>5-15 快速标注及练习</h3><ul>
+<li><strong>命令</strong>：<code>QDIM</code></li>
+<li><strong>作用</strong>：批量创建或编辑关联图形的标注。</li>
+<li><strong>操作步骤</strong>：激活命令 → 框选要标注的对象 → 选择标注类型（连续、并列、基线等）→ 指定尺寸线位置。</li>
+<li><strong>可用于批量编辑</strong>：激活命令 → 选择已有标注 → 修改类型或参数。</li>
+</ul>
+<h3 id="5-16-智能标注"><a href="#5-16-智能标注" class="headerlink" title="5-16 智能标注"></a>5-16 智能标注</h3><ul>
+<li><strong>命令</strong>：<code>DIM</code></li>
+<li><strong>作用</strong>：自动识别对象类型并应用相应标注，支持快捷键动态切换和调整。</li>
+<li><strong>操作步骤</strong>：激活命令 → 选择对象 → 确认&#x2F;调整标注。</li>
+<li><strong>子选项&#x2F;快捷键</strong>：<ul>
+<li>半径&#x2F;直径&#x2F;折弯&#x2F;弧长&#x2F;角度标注切换。</li>
+<li><code>基线(B)</code>：切换基线标注。</li>
+<li><code>连续(C)</code>：切换连续标注。</li>
+<li><code>对齐(A)</code>：将多个标注与基准对齐。</li>
+<li><code>分发(D)</code>：均匀分布标注。</li>
+<li><code>相等(E)</code>：在首尾尺寸线间平均分布标注。</li>
+<li><code>偏移(O)</code>：定义基线间距。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-17-智能标注练习"><a href="#5-17-智能标注练习" class="headerlink" title="5-17 智能标注练习"></a>5-17 智能标注练习</h3><ul>
+<li>（<em>实例操作：练习智能标注命令</em>）</li>
+</ul>
+<h3 id="5-18-文字对正、倾斜、样式替代"><a href="#5-18-文字对正、倾斜、样式替代" class="headerlink" title="5-18 文字对正、倾斜、样式替代"></a>5-18 文字对正、倾斜、样式替代</h3><ul>
+<li><strong>文字对正</strong>：在标注命令中，使用 <code>左对正(J)/居中对正(N)/右对正(R)</code> 调整文字水平位置。</li>
+<li><strong>文字角度</strong>：标注命令中 <code>角度(A)</code> 选项旋转文字。</li>
+<li><strong>倾斜标注</strong>：<code>DIMEDIT</code> → <code>倾斜(O)</code>，将尺寸界线倾斜一定角度以避让图形。</li>
+<li><strong>样式替代</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMOVERRIDE</code>，快捷键 <code>DOV</code></li>
+<li><strong>作用</strong>：通过修改系统变量临时覆盖样式参数（如颜色）。</li>
+<li><strong>常用变量</strong>：<ul>
+<li><code>DIMCLRT</code>：文字颜色 (0白,1红,2黄,3绿,4青,5蓝,6紫)</li>
+<li><code>DIMCLRD</code>：尺寸线颜色</li>
+<li><code>DIMCLRE</code>：尺寸界线颜色</li>
+</ul>
+</li>
+<li><code>清除替代</code>：恢复原样式。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-19-折断标注、线性折弯、调整间距"><a href="#5-19-折断标注、线性折弯、调整间距" class="headerlink" title="5-19 折断标注、线性折弯、调整间距"></a>5-19 折断标注、线性折弯、调整间距</h3><ul>
+<li><strong>折断标注</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMBREAK</code></li>
+<li><strong>作用</strong>：当标注与其他对象交叉时，打断尺寸线&#x2F;界线以提高可读性。</li>
+<li><strong>操作</strong>：激活命令 → 选择要折断的标注 → 选择交叉对象或手动指定打断点。</li>
+</ul>
+</li>
+<li><strong>线性折弯</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMJOGLINE</code></li>
+<li><strong>作用</strong>：在线性&#x2F;对齐标注上添加折弯线（常用于表示断裂视图）。</li>
+<li><strong>操作</strong>：激活命令 → 选择标注 → 指定折弯位置。</li>
+</ul>
+</li>
+<li><strong>调整间距</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMSPACE</code></li>
+<li><strong>作用</strong>：调整平行线性&#x2F;角度标注间的间距，使其相等或对齐。</li>
+<li><strong>操作</strong>：激活命令 → 选择基准标注 → 选择要调整的标注 → 输入间距值（0为对齐）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-20-尺寸的检验、更新与重新关联"><a href="#5-20-尺寸的检验、更新与重新关联" class="headerlink" title="5-20 尺寸的检验、更新与重新关联"></a>5-20 尺寸的检验、更新与重新关联</h3><ul>
+<li><strong>检验标注</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMINSPECT</code></li>
+<li><strong>作用</strong>：为重要尺寸添加检验率标签。</li>
+<li><strong>操作</strong>：激活命令 → 选择标注 → 设置形状（圆形&#x2F;角度&#x2F;无）、标签、检验率。</li>
+</ul>
+</li>
+<li><strong>更新标注</strong>：<ul>
+<li><strong>命令</strong>：<code>-DIMSTYLE</code> → <code>应用(A)</code></li>
+<li><strong>作用</strong>：用当前标注样式更新选定标注。</li>
+</ul>
+</li>
+<li><strong>重新关联标注</strong>：<ul>
+<li><strong>命令</strong>：<code>DIMREASSOCIATE</code></li>
+<li><strong>作用</strong>：将无关联的标注重新关联到对象或指定点。</li>
+<li><strong>解除关联</strong>：命令 <code>DIMDISASSOCIATE</code> (<code>DDA</code>)。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-21-快速引线及参数设置"><a href="#5-21-快速引线及参数设置" class="headerlink" title="5-21 快速引线及参数设置"></a>5-21 快速引线及参数设置</h3><ul>
+<li><strong>命令</strong>：<code>QLEADER</code>，快捷键 <code>LE</code></li>
+<li><strong>作用</strong>：快速创建带注释的引线。</li>
+<li><strong>操作步骤</strong>：输入 <code>LE</code> → 按 <code>S</code> 进行设置 → 指定引线点 → 输入注释文字。</li>
+<li><strong>设置选项</strong>：<ul>
+<li><strong>注释</strong>：设置注释类型（多行文字、复制对象、公差等）。</li>
+<li><strong>引线和箭头</strong>：设置引线类型（直线&#x2F;样条）、箭头样式、点数、角度约束。</li>
+<li><strong>附着</strong>：设置多行文字注释的放置位置。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-22-多重引线及引线样式"><a href="#5-22-多重引线及引线样式" class="headerlink" title="5-22 多重引线及引线样式"></a>5-22 多重引线及引线样式</h3><ul>
+<li><strong>多重引线</strong>：<ul>
+<li><strong>命令</strong>：<code>MLEADER</code>，快捷键 <code>MLD</code></li>
+<li><strong>组成</strong>：箭头、引线、基线、内容（文字&#x2F;块）。</li>
+<li><strong>操作</strong>：激活命令 → 指定箭头位置 → 指定基线位置 → 输入内容。</li>
+</ul>
+</li>
+<li><strong>多重引线样式</strong>：<ul>
+<li><strong>命令</strong>：<code>MLEADERSTYLE</code>，快捷键 <code>MLS</code></li>
+<li><strong>设置项</strong>：<ul>
+<li><strong>引线格式</strong>：类型（直线&#x2F;样条&#x2F;无）、颜色、线型、线宽、箭头。</li>
+<li><strong>引线结构</strong>：最大点数、线段角度、基线距离。</li>
+<li><strong>内容</strong>：类型（文字&#x2F;块）、文字样式&#x2F;块源、连接位置、基线间隙等。</li>
+</ul>
+</li>
+<li>**示例样式 (J1)**：实心闭合箭头(大小3)，基线长3，多行文字（高5），基线间隙2，第一行中间对齐。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-23-多重引线的添加与删除、对齐、合并"><a href="#5-23-多重引线的添加与删除、对齐、合并" class="headerlink" title="5-23 多重引线的添加与删除、对齐、合并"></a>5-23 多重引线的添加与删除、对齐、合并</h3><ul>
+<li><strong>添加引线</strong>：<code>MLEADEREDIT</code> → <code>添加引线(A)</code>，向现有多重引线添加新引线。</li>
+<li><strong>删除引线</strong>：<code>MLEADEREDIT</code> → <code>删除引线(R)</code>。</li>
+<li><strong>对齐</strong>：<code>MLEADERALIGN</code>，将多个多重引线按基准对齐并均匀排列。</li>
+<li><strong>合并</strong>：<code>MLEADERCOLLECT</code>，将多个包含块的多重引线组织成一行或一列，共用一条引线。</li>
+</ul>
+<h3 id="5-24-尺寸文字的修改与批量修改"><a href="#5-24-尺寸文字的修改与批量修改" class="headerlink" title="5-24 尺寸文字的修改与批量修改"></a>5-24 尺寸文字的修改与批量修改</h3><ul>
+<li><strong>单个修改</strong>：<ul>
+<li>方法1：命令 <code>TEXTEDIT</code> (<code>ED</code>)，选择尺寸。</li>
+<li>方法2：双击尺寸文字。</li>
+</ul>
+</li>
+<li><strong>批量修改</strong>：<ol>
+<li>命令 <code>DIMEDIT</code> (<code>DED</code>) → <code>新建(N)</code>。</li>
+<li>在文字编辑器中输入新内容（可加前缀、后缀、公差）。</li>
+<li>选择要修改的多个尺寸 → 空格确认。</li>
+</ol>
+</li>
+<li><strong>还原原始测量值</strong>：双击尺寸，全选文字，按 <code>Shift+&lt;</code> 和 <code>Shift+&gt;</code>。</li>
+</ul>
+<h3 id="5-25-锥孔、沉孔、螺纹孔的标注方法"><a href="#5-25-锥孔、沉孔、螺纹孔的标注方法" class="headerlink" title="5-25 锥孔、沉孔、螺纹孔的标注方法"></a>5-25 锥孔、沉孔、螺纹孔的标注方法</h3><ul>
+<li>（<em>内容为具体标注示例，需结合图示理解</em>）</li>
+</ul>
+<h3 id="5-26-倒角、退刀槽、小尺寸标注方法"><a href="#5-26-倒角、退刀槽、小尺寸标注方法" class="headerlink" title="5-26 倒角、退刀槽、小尺寸标注方法"></a>5-26 倒角、退刀槽、小尺寸标注方法</h3><ul>
+<li><strong>小尺寸标注</strong>：<ul>
+<li>空间不足时，可将箭头或文字移至尺寸界线外侧，或用引线引出。</li>
+<li>连续小尺寸可用圆点或斜线代替中间箭头，但两端仍需画出箭头。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-27-尺寸标注的原则与技巧"><a href="#5-27-尺寸标注的原则与技巧" class="headerlink" title="5-27 尺寸标注的原则与技巧"></a>5-27 尺寸标注的原则与技巧</h3><ol>
+<li>尺寸尽量注在视图外部。</li>
+<li>同心圆直径尽量注在非圆视图上。</li>
+<li>平行尺寸按大小顺序排列（内小外大），间距一致。</li>
+<li>内形、外形尺寸分别注在视图两侧。</li>
+<li>定形尺寸尽量集中注在同一视图。</li>
+<li>尺寸界线一般垂直尺寸线，必要时可倾斜。</li>
+<li>圆角处用细实线延长轮廓，从交点引尺寸界线。</li>
+<li>对称图形画一半时，尺寸线应略超过中心线，仅一端画箭头。</li>
+<li>重要尺寸（如定位尺寸）应从设计基准直接标出。</li>
+<li>考虑工艺基准和加工顺序。</li>
+<li>考虑测量的方便性。</li>
+<li>避免形成封闭尺寸链。</li>
+</ol>
+<h3 id="5-28-尺寸公差标注及练习"><a href="#5-28-尺寸公差标注及练习" class="headerlink" title="5-28 尺寸公差标注及练习"></a>5-28 尺寸公差标注及练习</h3><ul>
+<li><strong>基本概念</strong>：<ul>
+<li><strong>基本尺寸</strong>：设计尺寸。</li>
+<li><strong>极限尺寸</strong>：允许变动的极限值（最大、最小）。</li>
+<li><strong>上&#x2F;下偏差</strong>：极限尺寸减基本尺寸所得代数差。</li>
+<li><strong>公差</strong>：允许的变动量。</li>
+</ul>
+</li>
+<li><strong>标注方式</strong>：<ol>
+<li>直接标注偏差数值（如 <code>30±0.01</code>）。</li>
+<li>标注公差带代号（如 <code>Φ30K7</code>, <code>Φ30f8</code>）。</li>
+<li>在技术要求中统一说明（如“未注公差按GB&#x2F;T 1804-m”）。</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-29-表面粗糙度的标注方法"><a href="#5-29-表面粗糙度的标注方法" class="headerlink" title="5-29 表面粗糙度的标注方法"></a>5-29 表面粗糙度的标注方法</h3><ul>
+<li><strong>标准</strong>：GB&#x2F;T 131-2006。</li>
+<li><strong>图形符号</strong>：基本符号（任何工艺）、去除材料符号、不去除材料符号。</li>
+<li><strong>标注位置</strong>：轮廓线&#x2F;延长线、尺寸线&#x2F;延长线、引线上。</li>
+<li><strong>标注方向</strong>：<ul>
+<li>符号尖端从材料外垂直指向表面。</li>
+<li>数字与符号平行，字头尽量向上&#x2F;左。</li>
+<li>不带横线的符号避开90-120°和270-300°范围。</li>
+<li>带横线的符号在0-90°可直接放置，其他角度需加引线平放。</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-30-表面粗糙度标注实例"><a href="#5-30-表面粗糙度标注实例" class="headerlink" title="5-30 表面粗糙度标注实例"></a>5-30 表面粗糙度标注实例</h3><ul>
+<li>（<em>实例操作：练习粗糙度符号的放置与属性编辑</em>）</li>
+</ul>
+<h3 id="5-31-形位公差标注方法"><a href="#5-31-形位公差标注方法" class="headerlink" title="5-31 形位公差标注方法"></a>5-31 形位公差标注方法</h3><ul>
+<li><strong>组成</strong>：公差框格（符号、公差值、基准字母）、指引线（带箭头）。</li>
+<li><strong>命令</strong>：<ul>
+<li><strong>快速引线法</strong>：<code>QLEADER</code> (<code>LE</code>) → 设置“注释类型”为“公差”。</li>
+<li><strong>直接创建</strong>：<code>TOLERANCE</code> (<code>TOL</code>)。</li>
+</ul>
+</li>
+<li><strong>基准字母禁用</strong>：<ul>
+<li>老标准：E, F, I, J, L, M, O, P, R。</li>
+<li>新标准：I, O, Q。</li>
+</ul>
+</li>
+<li><strong>多层&#x2F;合并公差标注</strong>：<ol>
+<li>用 <code>LE</code> 创建无注释的引线。</li>
+<li>用 <code>TOL</code> 创建公差框格并移动到引线末端对齐。</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-32-形位公差标注实例"><a href="#5-32-形位公差标注实例" class="headerlink" title="5-32 形位公差标注实例"></a>5-32 形位公差标注实例</h3><ul>
+<li>（<em>实例操作：练习各种形位公差的标注</em>）</li>
+</ul>
+<h3 id="5-33-尺寸标注综合练习"><a href="#5-33-尺寸标注综合练习" class="headerlink" title="5-33 尺寸标注综合练习"></a>5-33 尺寸标注综合练习</h3><ul>
+<li>（<em>综合练习：应用本章所有标注命令和技巧完成完整图纸标注</em>）</li>
+</ul>
+<h2 id="第六章-图层与对象特性"><a href="#第六章-图层与对象特性" class="headerlink" title="第六章 图层与对象特性"></a>第六章 图层与对象特性</h2><h3 id="6-1-机械制图关于图线的规定"><a href="#6-1-机械制图关于图线的规定" class="headerlink" title="6-1 机械制图关于图线的规定"></a>6-1 机械制图关于图线的规定</h3><ul>
+<li><strong>参照标准</strong>：GB&#x2F;T 4457.4-2002 (图线)，GB&#x2F;T 14665-2012 (CAD制图规则)。</li>
+<li><strong>线宽</strong>：采用粗、细两种线宽，比例 <code>2:1</code>。组别选择依据图样类型、尺寸、比例等。</li>
+<li>**线型与颜色 (屏幕显示推荐)**：<ul>
+<li><strong>粗实线</strong>：白色。用途：可见轮廓线、相贯线等。</li>
+<li><strong>细实线</strong>：绿色。用途：尺寸线、尺寸界线、剖面线、引出线等。</li>
+<li><strong>波浪线&#x2F;双折线</strong>：绿色。用途：边界线、断裂处边界线。</li>
+<li><strong>细虚线</strong>：黄色。用途：不可见轮廓线。</li>
+<li><strong>粗虚线</strong>：白色。用途：允许表面处理的表示线。</li>
+<li><strong>细点画线</strong>：红色。用途：轴线、对称中心线等。</li>
+<li><strong>粗点画线</strong>：棕色。用途：限定范围表示线。</li>
+<li><strong>细双点画线</strong>：洋红色。用途：相邻零件轮廓线、假想轮廓线等。</li>
+</ul>
+</li>
+<li><strong>对象基本属性</strong>：颜色(<code>COLOR</code>, <code>COL</code>)、线宽(<code>LWEIGHT</code>, <code>LW</code>)、线型(<code>LINETYPE</code>, <code>LT</code>)。</li>
+<li><strong>线型管理</strong>：<ul>
+<li><strong>加载</strong>：打开线型管理器 → “加载” → 选择线型。</li>
+<li><strong>删除</strong>：在线型管理器中选择线型 → “删除”。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2-自定义线型的两种方法"><a href="#6-2-自定义线型的两种方法" class="headerlink" title="6-2 自定义线型的两种方法"></a>6-2 自定义线型的两种方法</h3><ul>
+<li><strong>方法一：修改现有线型文件</strong><ol>
+<li>找到CAD线型文件（如 <code>acadiso.lin</code>），用记事本打开。</li>
+<li>复制现有线型定义，修改名称和参数（如将 <code>U=0.0</code> 改为 <code>R=0.0</code> 可反转）。</li>
+<li>保存文件，在CAD中重新加载线型。</li>
+</ol>
+</li>
+<li><strong>方法二：通过绘制图形创建</strong><ol>
+<li>按1:1比例绘制线型图形（使用单行文字，中文需勾选大字体）。</li>
+<li>输入命令 <code>MKLTYPE</code> (<code>MK</code>)。</li>
+<li>设置保存路径、文件名，定义线型名称和描述。</li>
+<li>指定起点和终点，选择绘制的对象。</li>
+<li><strong>注意</strong>：若实线长度异常，需编辑<code>.lin</code>文件调整参数后重新加载。</li>
+</ol>
+</li>
+</ul>
+<h3 id="6-3-创建新图层、机械制图样板"><a href="#6-3-创建新图层、机械制图样板" class="headerlink" title="6-3 创建新图层、机械制图样板"></a>6-3 创建新图层、机械制图样板</h3><ul>
+<li><strong>图层概念</strong>：类似透明胶片，用于分类管理不同属性的对象。</li>
+<li><strong>创建图层</strong>：<ul>
+<li><strong>命令</strong>：<code>LAYER</code>，快捷键 <code>LA</code>。</li>
+<li><strong>步骤</strong>：打开图层特性管理器 → “新建图层” → 重命名 → 定义颜色、线宽、线型、透明度等。</li>
+<li><strong>建议</strong>：为标注、剖面线、细实线等分别创建图层，便于管理。</li>
+</ul>
+</li>
+<li><strong>创建机械制图样板文件步骤</strong>：<ol>
+<li>打开含所需样式（文字、标注、引线、块）的DWG文件。</li>
+<li>删除所有图形对象。</li>
+<li>打开图层管理器，删除旧图层。</li>
+<li>从其他文件复制已按规范设置的图层信息并粘贴。</li>
+<li>再次删除所有图形对象。</li>
+<li>“另存为” → 文件类型选择“图形样板(<code>*.dwt</code>)”，命名（如“机械制图2”）。</li>
+<li>在“选项”中将其设为默认样板。</li>
+</ol>
+</li>
+</ul>
+<h3 id="6-4-图层绘图的三种操作"><a href="#6-4-图层绘图的三种操作" class="headerlink" title="6-4 图层绘图的三种操作"></a>6-4 图层绘图的三种操作</h3><ol>
+<li><strong>切换当前层</strong>：在绘制前，先将目标图层置为当前层。</li>
+<li><strong>先绘制后归类</strong>：在0层绘制所有图形，然后选择对象，在图层列表中将它们移到对应图层。</li>
+<li><strong>特性匹配</strong>：使用 <code>MATCHPROP</code> (<code>MA</code>) 命令，将源对象的图层特性快速应用到其他对象。</li>
+</ol>
+<h3 id="6-5-图层状态控制与便捷操作"><a href="#6-5-图层状态控制与便捷操作" class="headerlink" title="6-5 图层状态控制与便捷操作"></a>6-5 图层状态控制与便捷操作</h3><ul>
+<li><strong>状态控制（通过图层列表下拉菜单）</strong>：<ul>
+<li><strong>开&#x2F;关</strong>：关闭后对象不显示、不可编辑、不打印，但参与重生成。</li>
+<li><strong>冻结&#x2F;解冻</strong>：冻结后对象不显示、不可编辑、不打印，且<strong>不参与重生成</strong>，能提升复杂图纸性能。</li>
+<li><strong>锁定&#x2F;解锁</strong>：锁定后对象可见、可打印、可捕捉，但不可编辑。</li>
+</ul>
+</li>
+<li><strong>图层便捷操作命令</strong>：<ul>
+<li><code>LAYOFF</code>：关闭选定对象所在图层。</li>
+<li><code>LAYON</code>：打开所有关闭的图层。</li>
+<li><code>LAYISO</code>：隔离，仅显示选定对象所在图层，其他图层隐藏&#x2F;锁定。</li>
+<li><code>LAYUNISO</code>：取消图层隔离。</li>
+<li><code>LAYFRZ</code>：冻结选定对象所在图层。</li>
+<li><code>LAYTHW</code>：解冻所有图层。</li>
+<li><code>LAYLCK</code>：锁定选定对象所在图层。</li>
+<li><code>LAYULK</code>：解锁选定对象所在图层。</li>
+<li><code>LAYMCUR</code>：将选定对象所在图层置为当前层。</li>
+<li><code>LAYMCH</code>：将选定对象的图层更改为与目标图层一致。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-6-图层特性过滤器、组过滤器"><a href="#6-6-图层特性过滤器、组过滤器" class="headerlink" title="6-6 图层特性过滤器、组过滤器"></a>6-6 图层特性过滤器、组过滤器</h3><ul>
+<li><strong>图层特性过滤器</strong>：根据图层属性（名称、颜色、线型等）自动筛选图层。<ul>
+<li><strong>创建</strong>：在图层特性管理器中点击“新建特性过滤器” → 设置筛选条件并命名。</li>
+<li><strong>使用</strong>：选择过滤器可批量管理符合条件的所有图层。</li>
+<li><strong>反转过滤器</strong>：快速选择不满足条件的图层。</li>
+</ul>
+</li>
+<li><strong>组过滤器</strong>：手动将任意图层组合在一起管理。<ul>
+<li><strong>创建</strong>：点击“新建组过滤器”并命名 → 从图层列表中将图层拖入组中，或在图形窗口选择对象添加其图层。</li>
+<li><strong>查看空图层</strong>：命令 <code>SHOWLAYERUSAGE</code>，设置值为1。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-7-图层状态管理器的操作"><a href="#6-7-图层状态管理器的操作" class="headerlink" title="6-7 图层状态管理器的操作"></a>6-7 图层状态管理器的操作</h3><ul>
+<li><strong>作用</strong>：保存、恢复和管理整套图层设置（开&#x2F;关、冻结、锁定等状态）。</li>
+<li><strong>操作</strong>：<ol>
+<li>打开图层状态管理器（图层面板或图层特性管理器）。</li>
+<li><strong>新建</strong>：输入名称和说明，保存当前图层状态。</li>
+<li><strong>编辑</strong>：修改已保存状态中的图层属性和状态。</li>
+<li><strong>恢复</strong>：将图形中的图层状态快速切换到之前保存的某个状态。</li>
+<li><strong>输入&#x2F;输出</strong>：可将图层状态保存为(<code>.las</code>)文件，便于在其他图形中使用。</li>
+</ol>
+</li>
+</ul>
+<h3 id="6-8-图层的更改、漫游、合并、删除及清理"><a href="#6-8-图层的更改、漫游、合并、删除及清理" class="headerlink" title="6-8 图层的更改、漫游、合并、删除及清理"></a>6-8 图层的更改、漫游、合并、删除及清理</h3><ul>
+<li><strong>更改为当前图层</strong>：将选定对象的图层改为当前图层。</li>
+<li><strong>复制到新图层</strong>：将选定对象复制到指定图层上，生成副本。</li>
+<li><strong>图层漫游</strong>：动态查看各图层上的对象，便于检查和清理未使用的图层。</li>
+<li><strong>合并图层</strong>：将多个图层合并到一个目标图层，原图层被删除。</li>
+<li><strong>删除图层</strong>：删除图层及其上所有对象。</li>
+<li><strong>锁定图层淡入</strong>：控制被锁定图层上对象的显示暗淡程度。</li>
+<li><strong>清理未使用图层</strong>：使用 <code>PURGE</code> (<code>PU</code>) 命令。</li>
+</ul>
+<h3 id="6-9-特性匹配、0图层的特点"><a href="#6-9-特性匹配、0图层的特点" class="headerlink" title="6-9 特性匹配、0图层的特点"></a>6-9 特性匹配、0图层的特点</h3><ul>
+<li><strong>特性匹配</strong>：<ul>
+<li><strong>命令</strong>：<code>MATCHPROP</code>，快捷键 <code>MA</code>。</li>
+<li><strong>作用</strong>：复制源对象的特性（颜色、图层、线型、线宽等）到目标对象。</li>
+<li><strong>操作</strong>：激活命令 → 选择源对象 → 选择目标对象 → 空格结束。</li>
+</ul>
+</li>
+<li><strong>0图层特点</strong>：<ol>
+<li>系统默认，不可删除或重命名。</li>
+<li><strong>外部参照属性</strong>：当文件作为外部参照插入时，其0图层属性使用当前主机文件的0图层属性。</li>
+<li><strong>块管理优势</strong>：建议在0层上创建块定义。块插入时，其中对象将继承<strong>插入所在图层</strong>的特性，而块定义仍保留在0层，便于统一控制。</li>
+</ol>
+</li>
+</ul>
+<h3 id="6-10-特性匹配与0图层应用的实例—外来文件的处理"><a href="#6-10-特性匹配与0图层应用的实例—外来文件的处理" class="headerlink" title="6-10 特性匹配与0图层应用的实例—外来文件的处理"></a>6-10 特性匹配与0图层应用的实例—外来文件的处理</h3><ul>
+<li><strong>目的</strong>：快速将外来图纸标准化为公司格式。</li>
+<li><strong>通用步骤</strong>：<ol>
+<li>将外来图纸内容复制到公司模板空白文件中。</li>
+<li>全选图形，将其图层改为“0”层，颜色设为“随层”。</li>
+<li>使用 <code>STYLE</code>、<code>DIMSTYLE</code> 等命令替换文字样式、标注样式为公司标准。</li>
+<li>替换或编辑块（如粗糙度、基准符号）。</li>
+<li>运行 <code>PURGE</code> 命令，清理所有未使用的样式、图层、块等。</li>
+<li>全选图形，复制到最终的新文件中。</li>
+<li>使用特性匹配(<code>MA</code>)或图层更改命令，将对象匹配到公司规范的图层。</li>
+<li>进行细节调整，保存。</li>
+</ol>
+</li>
+</ul>
+<h3 id="6-11-图层绘图综合练习（上）"><a href="#6-11-图层绘图综合练习（上）" class="headerlink" title="6-11 图层绘图综合练习（上）"></a>6-11 图层绘图综合练习（上）</h3><h3 id="6-12-图层绘图综合练习（下）"><a href="#6-12-图层绘图综合练习（下）" class="headerlink" title="6-12 图层绘图综合练习（下）"></a>6-12 图层绘图综合练习（下）</h3><ul>
+<li>（<em>综合练习内容：应用本章所有图层管理命令和技巧进行规范绘图</em>）</li>
+</ul>
+<h2 id="第七章-参数化绘图"><a href="#第七章-参数化绘图" class="headerlink" title="第七章 参数化绘图"></a>第七章 参数化绘图</h2><h3 id="7-1-CAD-参数化绘图的优势"><a href="#7-1-CAD-参数化绘图的优势" class="headerlink" title="7-1 CAD 参数化绘图的优势"></a>7-1 CAD 参数化绘图的优势</h3><p>CAD 参数化绘图是一种设计方法，它通过定义尺寸和几何约束来创建可以轻松修改的设计。在参数化绘图中，当一个参数（如长度、宽度或角度）改变时，整个设计会自动更新以保持一致性。这种方法提高了设计效率，并减少了因手动调整而导致的错误。</p>
+<p>参数化绘图优势：</p>
+<ol>
+<li>简化绘图步骤</li>
+<li>防止图元变形</li>
+<li>在设计中随时修改尺寸</li>
+<li>绘制一些难画的图形</li>
+<li>尺寸支持运算</li>
+<li>使用关系式关联尺寸</li>
+</ol>
+<h3 id="7-2-几何约束与标注约束"><a href="#7-2-几何约束与标注约束" class="headerlink" title="7-2 几何约束与标注约束"></a>7-2 几何约束与标注约束</h3><p>参数化绘图是通过添加约束来实现的。约束可以分为两类：<strong>几何约束</strong>和<strong>标注约束</strong>。</p>
+<ul>
+<li><strong>几何约束</strong>：定义图形元素之间的相对位置关系，比如平行、垂直、相切、同心等。使用几何约束，可以确保即使移动或调整图形时，相关的几何关系也能保持不变。</li>
+<li><strong>标注约束</strong>：指定图形元素的确切大小，如长度、角度、半径等。通过标注约束，可以直接控制图形的具体尺寸，当改变这些约束值时，整个图形会自动更新以满足新的条件。</li>
+</ul>
+<p>在实际使用中，几何约束和标注约束通常是混合使用的，优先使用几何约束来确定图形的基本形状和位置，然后再使用标注约束来进一步细化和调整图形的大小。</p>
+<p>当图形处在完全约束状态，既不会变形，也不能移动。</p>
+<p><strong>几何约束与捕捉的区别</strong>：</p>
+<ul>
+<li>捕捉是先期约束，是临时的，是不固定的。</li>
+<li>几何约束是后期约束，是永久的，是恒定的。</li>
+</ul>
+<p><strong>标注约束与尺寸标注的区别</strong>：</p>
+<ul>
+<li>尺寸标注是对图形的注释，不能改变图形的大小。</li>
+<li>标注约束是对图形的驱动，可以改变图形的大小。</li>
+</ul>
+<h3 id="7-3-几何约束的类型与操作方法—重合-共线-同心-水平-竖直-固定"><a href="#7-3-几何约束的类型与操作方法—重合-共线-同心-水平-竖直-固定" class="headerlink" title="7-3 几何约束的类型与操作方法—重合&#x2F;共线&#x2F;同心&#x2F;水平&#x2F;竖直&#x2F;固定"></a>7-3 几何约束的类型与操作方法—重合&#x2F;共线&#x2F;同心&#x2F;水平&#x2F;竖直&#x2F;固定</h3><p>几何约束的类型包括：重合、共线、同心、水平、竖直、相等、平行、垂直、相切、对称、平滑、固定。</p>
+<ul>
+<li><p><strong>重合</strong>：约束两个点使其重合，或约束一个点位于对象上。</p>
+<ul>
+<li>先选择的点或对象作为参照基准，保持不动。</li>
+<li><strong>多个</strong>：先选择对象，再选择多个点，与对象重合。</li>
+<li><strong>自动约束</strong>：当两个点已经相连，可使用自动约束。</li>
+</ul>
+</li>
+<li><p><strong>共线</strong>：约束两个点或线段在同一直线上。</p>
+<ul>
+<li>适用于直线段、多段线线段、文字、椭圆（弧）轴端点。</li>
+<li><strong>多个</strong>：将多个对象约束在一条直线上。</li>
+</ul>
+</li>
+<li><p><strong>同心</strong>：约束两个对象的圆心点重合。</p>
+<ul>
+<li>适用于圆、圆弧、椭圆、椭圆弧。</li>
+</ul>
+</li>
+<li><p><strong>水平</strong>：约束一条直线或者两个点，使其与当前的 UCS 的 X 轴平行。</p>
+</li>
+<li><p><strong>竖直</strong>：约束一条直线或者两个点，使其与当前的 UCS 的 Y 轴平行。</p>
+</li>
+<li><p><strong>固定</strong>：约束点或对象的位置，使其不能移动。</p>
+</li>
+</ul>
+<h3 id="7-4-几何约束的类型与操作方法—相等-平行-垂直-相切-对称-平滑"><a href="#7-4-几何约束的类型与操作方法—相等-平行-垂直-相切-对称-平滑" class="headerlink" title="7-4 几何约束的类型与操作方法—相等&#x2F;平行&#x2F;垂直&#x2F;相切&#x2F;对称&#x2F;平滑"></a>7-4 几何约束的类型与操作方法—相等&#x2F;平行&#x2F;垂直&#x2F;相切&#x2F;对称&#x2F;平滑</h3><ul>
+<li><p><strong>相等</strong>：约束两条直线或者多段线使其具有相同的长度，或约束圆和圆弧使其具有相同的半径值。</p>
+<ul>
+<li>选择的第一个对象为参照尺寸。</li>
+<li><strong>多个</strong>：将多个对象约束为相等。</li>
+</ul>
+</li>
+<li><p><strong>平行</strong>：约束两条直线、文字、椭圆，使其具有相同的角度。</p>
+<ul>
+<li>选择的一个对象为参照，保持不动。</li>
+<li><strong>直线</strong>：第二个对象靠近选择点的端点作为旋转基点。</li>
+<li><strong>椭圆</strong>：圆心点作为旋转基点。</li>
+<li><strong>文字</strong>：对正点作为旋转基点。</li>
+</ul>
+</li>
+<li><p><strong>垂直</strong>：约束两条直线、文字、椭圆，使其夹角始终保持90°。</p>
+<ul>
+<li>选择的第一个对象为参照，保持不动。</li>
+<li><strong>直线</strong>：第二个对象靠近选择点的端点作为旋转基点。</li>
+<li><strong>椭圆</strong>：圆心点作为旋转基点。</li>
+<li><strong>文字</strong>：对正点作为旋转基点。</li>
+</ul>
+</li>
+<li><p><strong>相切</strong>：约束两条曲线，使其彼此相切。</p>
+<ul>
+<li>适用于直线、多段线、圆、圆弧和椭圆。</li>
+<li>选择的第一个对象为参照，保持不动。</li>
+</ul>
+</li>
+<li><p><strong>对称</strong>：约束两个对象或两个点，使其以选定直线为对称轴彼此对称。</p>
+<ul>
+<li><strong>圆、椭圆、圆弧</strong>：选择两点对称时，是圆心点对称。</li>
+<li>直接选择对象，不但圆心点对称，同时调整半径相等或长短轴相等。</li>
+<li><strong>圆弧点对称</strong>：可选择端点、中点、圆心。</li>
+</ul>
+</li>
+<li><p><strong>平滑</strong>：约束一条样条曲线，使其与另一条样条曲线或直线、圆弧、多段线相连并相切。</p>
+</li>
+</ul>
+<h3 id="7-5-几何约束练习"><a href="#7-5-几何约束练习" class="headerlink" title="7-5 几何约束练习"></a>7-5 几何约束练习</h3><blockquote>
+<p><em>（此处可补充完整绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="7-6-标注约束的类型与标注转换"><a href="#7-6-标注约束的类型与标注转换" class="headerlink" title="7-6 标注约束的类型与标注转换"></a>7-6 标注约束的类型与标注转换</h3><p>在使用 CAD 进行设计时，我们可以通过标注约束来控制对象的距离、长度、角度和半径值。修改约束值可以改变对象的大小。</p>
+<h4 id="标注约束的类型"><a href="#标注约束的类型" class="headerlink" title="标注约束的类型"></a>标注约束的类型</h4><p>线性（水平&#x2F;竖直）、对齐、半径、直径、角度。</p>
+<blockquote>
+<p><em>（此处补充标注约束类型示意图）</em><br>图示说明：</p>
+<ul>
+<li>水平&#x2F;竖直：约束两点之间的水平或竖直距离</li>
+<li>对齐：约束两点在对齐方向的距离</li>
+<li>半径：约束圆或圆弧的半径值</li>
+<li>直径：约束圆或圆弧的直径值</li>
+<li>角度：约束直线段之间、圆弧、三点之间的角度</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>动态约束模式</strong>：不可打印，不方便调整位置，不可修改图层。</li>
+<li><strong>注释性约束模式</strong>：可打印，方便调整位置，可修改图层。</li>
+</ul>
+<h4 id="标注转换"><a href="#标注转换" class="headerlink" title="标注转换"></a>标注转换</h4><p>将尺寸标注转换为标注约束，转换后可以驱动尺寸。<br>操作步骤：</p>
+<ol>
+<li>在标注面板，点击转换工具。</li>
+<li>选择要转换的尺寸标注。</li>
+<li>按空格键确认。</li>
+</ol>
+<h3 id="7-7-标注约束练习"><a href="#7-7-标注约束练习" class="headerlink" title="7-7 标注约束练习"></a>7-7 标注约束练习</h3><blockquote>
+<p><em>（此处补充练习图示及步骤）</em></p>
+</blockquote>
+<h3 id="7-8-约束的设置、隐藏与删除"><a href="#7-8-约束的设置、隐藏与删除" class="headerlink" title="7-8 约束的设置、隐藏与删除"></a>7-8 约束的设置、隐藏与删除</h3><ul>
+<li><strong>自动约束</strong>：将绘制图形对象时自带的初始约束（如水平、竖直、相连等）转化为几何约束。</li>
+<li><strong>显示&#x2F;隐藏</strong>：根据图面需要，对选定对象的几何或标注约束、全部几何或标注约束进行显示与隐藏。</li>
+<li><strong>删除约束</strong>：删除选定对象上的全部约束（几何和标注）。</li>
+</ul>
+<h4 id="约束设置"><a href="#约束设置" class="headerlink" title="约束设置"></a>约束设置</h4><p><strong>【几何】</strong></p>
+<ul>
+<li><strong>推断几何约束</strong>：绘制图形时，自动添加约束。</li>
+<li><strong>约束栏显示设置</strong>：全部勾选。</li>
+<li><strong>约束栏透明度</strong>：10-90，数值越小，越透明。</li>
+<li><strong>将约束应用于选定对象后显示约束栏</strong>：绘图时，默认显示，建议不勾。</li>
+<li><strong>选定对象时显示约束栏</strong>：绘图时，默认不显示，选择对象可以显示约束栏，建议勾选。</li>
+</ul>
+<p><strong>【标注】</strong></p>
+<ul>
+<li><strong>标注名称格式</strong>：名称、值、名称和表达式。</li>
+<li><strong>为注释性约束显示锁定图标</strong>：是否显示锁定标记（动态约束始终有锁）。</li>
+<li><strong>为选定对象显示隐藏的动态约束</strong>：全部隐藏后，选择对象可以显示动态标注约束。</li>
+</ul>
+<p><strong>【自动约束】</strong></p>
+<ul>
+<li>通过上移下移调整优先的顺序。</li>
+<li><strong>重置</strong>：恢复默认的顺序。</li>
+<li>建议勾选“相等”约束。</li>
+</ul>
+<h3 id="7-9-参数管理器及练习"><a href="#7-9-参数管理器及练习" class="headerlink" title="7-9 参数管理器及练习"></a>7-9 参数管理器及练习</h3><p>CAD 参数管理器用于管理和控制 CAD 模型中的所有参数。这些参数可以是距离、长度、宽度、角度、半径、直径等。</p>
+<p><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击“参数管理器”的按钮，系统弹出“参数管理器”对话框。</li>
+<li>双击“表达式”列修改内容。</li>
+<li>右键单击参数并选择“表达式”选项，可选择函数。</li>
+<li>右键单击参数，可删除选定参数。</li>
+</ol>
+<p><strong>备注</strong>：</p>
+<ul>
+<li><code>P1</code>：圆周率 <code>π</code> (pi)</li>
+<li>弧长计算公式示例：<code>弧长 = 直径 * π * 圆心角 / 360</code></li>
+</ul>
+<blockquote>
+<p><em>（此处补充参数管理器界面图示及操作练习）</em></p>
+</blockquote>
+<h3 id="7-10-参数化绘图实例1"><a href="#7-10-参数化绘图实例1" class="headerlink" title="7-10 参数化绘图实例1"></a>7-10 参数化绘图实例1</h3><blockquote>
+<p><em>（可补充完整绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="7-11-参数化绘图实例2"><a href="#7-11-参数化绘图实例2" class="headerlink" title="7-11 参数化绘图实例2"></a>7-11 参数化绘图实例2</h3><blockquote>
+<p><em>（可补充完整绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="7-12-参数化绘图实例3"><a href="#7-12-参数化绘图实例3" class="headerlink" title="7-12 参数化绘图实例3"></a>7-12 参数化绘图实例3</h3><blockquote>
+<p><em>（可补充完整绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="7-13-参数化绘图实例4"><a href="#7-13-参数化绘图实例4" class="headerlink" title="7-13 参数化绘图实例4"></a>7-13 参数化绘图实例4</h3><blockquote>
+<p><em>（可补充完整绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="7-14-参数化绘图实例5"><a href="#7-14-参数化绘图实例5" class="headerlink" title="7-14 参数化绘图实例5"></a>7-14 参数化绘图实例5</h3><blockquote>
+<p><em>（可补充完整绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="7-15-参数化绘图实例6"><a href="#7-15-参数化绘图实例6" class="headerlink" title="7-15 参数化绘图实例6"></a>7-15 参数化绘图实例6</h3><blockquote>
+<p><em>（可补充完整绘图步骤及图示）</em></p>
+</blockquote>
+<h2 id="第八章-三维实体建模与编辑"><a href="#第八章-三维实体建模与编辑" class="headerlink" title="第八章 三维实体建模与编辑"></a>第八章 三维实体建模与编辑</h2><h3 id="8-1-三维建模界面及选项设置"><a href="#8-1-三维建模界面及选项设置" class="headerlink" title="8-1 三维建模界面及选项设置"></a>8-1 三维建模界面及选项设置</h3><p>CAD 三维实体建模是一种使用计算机软件创建和编辑虚拟三维实体的过程。</p>
+<p>三维实体建模的内容：</p>
+<ol>
+<li>用户坐标系（UCS）的建立：学会根据需要调整坐标系的位置与方向，以便更高效地绘制和编辑三维模型。</li>
+<li>三维实体的观察：学会使用不同的视角和视觉样式来观察三维模型，这有助于更好地理解模型的空间关系。</li>
+<li>实体建模：学会长方体、圆柱体等基本体的创建，以及使用拉伸、旋转、放样、扫描建模。</li>
+<li>布尔运算：布尔运算包括并集、差集和交集，这些运算可以用来组合、分割和修剪实体。</li>
+<li>实体编辑：熟悉如何使用 CAD 软件提供的编辑命令，如倒角、圆角、移动、旋转、阵列、镜像、面编辑等，来修改实体的位置、方向、数量和细节。</li>
+</ol>
+<h4 id="三维建模界面"><a href="#三维建模界面" class="headerlink" title="三维建模界面"></a>三维建模界面</h4><p>点击工作空间，切换到三维基础或三维建模。<br>功能区是三维建模的选项卡和工具面板。<br>绘图区的左上角是视口控件，右上角是视角立方体，右下角是导航栏，左下角是坐标系。</p>
+<p>视口控件有三个选项，分别是显示选项、视图控件、视觉样式控件，显示选项用来控制视角立方体、全导航控制盘、导航栏的显示与隐藏以及视口的配置。</p>
+<h4 id="WCS（世界坐标系）与-UCS（用户坐标系）"><a href="#WCS（世界坐标系）与-UCS（用户坐标系）" class="headerlink" title="WCS（世界坐标系）与 UCS（用户坐标系）"></a>WCS（世界坐标系）与 UCS（用户坐标系）</h4><ul>
+<li><strong>WCS（世界坐标系）</strong>：一个固定的、默认的坐标系统，其原点和坐标轴方向不会改变。</li>
+<li><strong>UCS（用户坐标系）</strong>：一个可移动的坐标系统，允许用户根据绘图需求自定义原点和坐标轴的方向。UCS 的灵活性使得在特定的绘图任务中更加方便，例如在三维模型的某个面上绘制图形或者处理倾斜的图纸。</li>
+</ul>
+<p><strong>使用场景和优势</strong>：</p>
+<ul>
+<li><strong>WCS</strong>：适用于初始绘图阶段，当绘图的方向与 WCS 一致时，可以直接使用。WCS 提供了一个稳定的参考框架，有助于初学者理解和学习 CAD 软件。</li>
+<li><strong>UCS</strong>：在需要特定视角或在三维空间中工作时更为有用。通过调整 UCS，用户可以更直观地绘制和编辑对象，提高工作效率。例如，在建模时可以将 UCS 放置在模型的侧面或顶面上，以便沿着这些平面进行精确的操作。</li>
+</ul>
+<p><strong>切换和控制</strong>：可以使用 UCS 命令来激活 UCS 编辑，并通过不同的选项来设置新的原点、旋转 UCS 或将 UCS 与现有对象对齐。也可以使用 WCS 选项将 UCS 重置为 WCS。</p>
+<h4 id="绘图区优化"><a href="#绘图区优化" class="headerlink" title="绘图区优化"></a>绘图区优化</h4><p>状态栏：添加三维对象捕捉、动态 UCS。<br>选项：系统-图形性能、三维建模-十字光标。</p>
+<h3 id="8-2-切换视图、视觉样式、视口配置"><a href="#8-2-切换视图、视觉样式、视口配置" class="headerlink" title="8-2 切换视图、视觉样式、视口配置"></a>8-2 切换视图、视觉样式、视口配置</h3><p>为了便于观察和编辑三维模型，CAD 为用户提供了 6 个正交视图和 4 个等轴侧视图。</p>
+<p><strong>【切换视图】</strong> 通常有两种方式：</p>
+<ul>
+<li><strong>方式一</strong>：点击绘图区左上角的视图控件，通过弹出的菜单切换视图。</li>
+<li><strong>方式二</strong>：点击功能区视图面板上的恢复视图，通过下拉菜单切换视图。<ul>
+<li>正交视图：俯视、仰视、左视、右视、前视、后视。</li>
+<li>等轴测视图：西南等轴侧、东南等轴侧、东北等轴侧、西北等轴侧。</li>
+</ul>
+</li>
+</ul>
+<p><strong>【视觉样式】</strong>：CAD 提供了控制模型外观显示效果的工具，能快速显示出三维物体的逼真形态。<br>切换视觉样式通常有两种方式：</p>
+<ul>
+<li><strong>方式一</strong>：点击绘图区左上角的视觉样式控件，通过弹出的菜单切换视图显示效果。</li>
+<li><strong>方式二</strong>：点击功能区视图面板上视觉样式，在弹出的面板上选择样式效果。</li>
+</ul>
+<p><strong>常用视觉样式</strong>：</p>
+<ul>
+<li><strong>二维线框</strong>：用直线和曲线显示对象的边缘，对象的线型和线宽都是可见的。</li>
+<li><strong>概念</strong>：将对象进行平面着色，对边界做光滑处理。</li>
+<li><strong>隐藏</strong>：用直线和曲线显示对象的边缘，将三维对象中观察不到的隐藏起来，只显示那些位于前面无遮挡的线条。</li>
+<li><strong>真实</strong>：将对象进行平面着色，不对面边界做光滑处理。</li>
+<li><strong>着色</strong>：将对象进行平滑着色。</li>
+<li><strong>带边缘着色</strong>：将对象的面着色，并将可见边平滑着色，以显示边缘。</li>
+<li><strong>灰度</strong>：将对象以单色模式着色，以产生灰色效果。</li>
+<li><strong>勾画</strong>：将对象显示为手绘的效果。</li>
+<li><strong>线框</strong>：用直线和曲线显示对象的边缘，对象的线型和线宽都是不可见的，坐标系按钮显示成三维着色形式。</li>
+<li><strong>X 射线</strong>：更改面的不透明度，将对象变成部分透明。</li>
+</ul>
+<p><strong>【视口配置】</strong>：视口是用于绘制图形、显示图形的区域，CAD 默认将整个绘图区作为一个视口。可以根据观察需要，对视口进行配置。</p>
+<ul>
+<li><strong>方法一</strong>：视口控件，视口配置列表，选择配置方案。</li>
+<li><strong>方法二</strong>：可视化，模型视口，选择配置方案。<ul>
+<li>配置方案：单个视口、两个、三个、四个等，可以根据需要来设置。</li>
+</ul>
+</li>
+<li><strong>激活视口</strong>：鼠标单击该视口，显示着色坐标系。</li>
+<li><strong>最大化视口</strong>：视口控件，最大化视口。</li>
+<li><strong>恢复视口</strong>：视口控件，恢复视口。</li>
+<li><strong>恢复单个视口</strong>：视口控件，视口配置列表，单个。</li>
+</ul>
+<h3 id="8-3-动态观察、视觉立方体、全导航控制盘、导航栏"><a href="#8-3-动态观察、视觉立方体、全导航控制盘、导航栏" class="headerlink" title="8-3 动态观察、视觉立方体、全导航控制盘、导航栏"></a>8-3 动态观察、视觉立方体、全导航控制盘、导航栏</h3><p>为了多方位的观察模型，CAD 为用户提供了三种动态观察功能。</p>
+<p><strong>激活动态观察的方法</strong>：</p>
+<ul>
+<li><strong>方法一</strong>：菜单栏-视图-动态观察。</li>
+<li><strong>方法二</strong>：导航栏-动态观察。</li>
+</ul>
+<p><strong>【动态观察】</strong> 有三种类型：</p>
+<blockquote>
+<p><em>注意：启动此命令之前选择多个对象中的一个可以限制为仅显示此对象。</em></p>
+</blockquote>
+<ul>
+<li><strong>受约束的动态观察</strong>：在三维空间中旋转视图，但仅限于在水平和垂直方向上进行动态观察。按住左键不放，可以手动调整观察点，观察模型的不同表面。</li>
+<li><strong>自由动态观察</strong>：在三维空间中不受滚动约束地旋转视图。圆形辅助框架，可以从多个方向自由的观察模型。</li>
+<li><strong>连续动态观察</strong>：以连续运动方式在三维空间中旋转视图。按住鼠标左键拖动一下，可以延拖动方向，连续的旋转视图。</li>
+</ul>
+<p><strong>【视角立方体】</strong>：可以快速调整模型的视点，可以更改模型的视图投影、定义和恢复模型的主视图。<br>视角立方体由立方体、房子、罗盘、UCS 菜单 4 部分组成。</p>
+<ul>
+<li><strong>立方体</strong>：快速切换正交视图。</li>
+<li><strong>房子</strong>：快速返回主视图，以及切换平行透视模式。</li>
+<li><strong>左右两个箭头</strong>：让图形在水平方向进行 90 度旋转。</li>
+<li><strong>上下两个箭头</strong>：让图形在竖直方向进行 90 度旋转。</li>
+<li><strong>右上角两个弧形箭头</strong>：让图形屏幕方向进行 90 度旋转。</li>
+<li>在立方体上按住左键拖动，可以对图形进行动态观察。</li>
+</ul>
+<p><strong>【全导航控制盘】</strong>：</p>
+<ul>
+<li><strong>激活方式</strong>：1. 视口控件，全导航控制盘。2. 导航栏，全导航控制盘。</li>
+<li><strong>主要功能</strong>：<ul>
+<li><strong>平移</strong>：移视图。</li>
+<li><strong>动态观察</strong>：围绕轴心进行动态观察。按 Ctrl 键可以设定轴心。</li>
+<li><strong>缩放</strong>：从单击位置进行缩放。</li>
+<li><strong>回放</strong>：完整回放您的移动历史。</li>
+<li><strong>中心</strong>：设定缩放&#x2F;动态观察中心。</li>
+<li><strong>漫游</strong>：单击并朝您要漫游的方向拖动鼠标。</li>
+<li><strong>环视</strong>：在当前位置环视。</li>
+<li><strong>向上&#x2F;向下</strong>：向上或向下移动。</li>
+<li><strong>切换样式</strong>：点击下拉箭头，可以切换控制盘的样式。</li>
+<li><strong>退出</strong>：点击 X 号，可以关闭导航控制盘。</li>
+</ul>
+</li>
+</ul>
+<p><strong>【导航栏】</strong>：</p>
+<ul>
+<li>主要包含平移、缩放等视图导航工具。</li>
+<li>平移、范围、窗口缩放、缩放上一个、实时缩放、全部缩放、动态缩放、缩放比例、中心缩放、缩放对象、放大、缩小等。</li>
+</ul>
+<p><strong>【快捷操作】</strong>：</p>
+<ul>
+<li><strong>平移</strong>：按住鼠标中键，可以平移图形（所有）。</li>
+<li><strong>旋转</strong>：按住 SHIFT 键+鼠标中键，可以旋转图形（所有）。</li>
+<li><strong>缩放</strong>：滚动中键，前滚放大，后滚缩小。</li>
+</ul>
+<h3 id="8-4-创建长方体、圆柱体、圆锥体"><a href="#8-4-创建长方体、圆柱体、圆锥体" class="headerlink" title="8-4 创建长方体、圆柱体、圆锥体"></a>8-4 创建长方体、圆柱体、圆锥体</h3><p><strong>长方体</strong>：英文命令：<code>BOX</code><br>创建三维实心长方体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>在 UCS 的 XY 平面或与之平行的平面绘制长方体的底面。</li>
+<li>在 Z 轴方向上指定长方体的高度。高度可以输入正值和负值。<br><strong>底面的画法</strong>：</li>
+<li>指定第一个角点，指定另一角点。</li>
+<li>指定第一个角点，选择立方体，输入边长。</li>
+<li>指定第一个角点，指定长宽。</li>
+<li>指定底面矩形的中心，指定一个角点。</li>
+<li>指定底面矩形的中心，选择立方体，输入边长。</li>
+<li>指定底面矩形的中心，指定长宽。</li>
+</ol>
+<ul>
+<li><strong>两点</strong>：参照空间两点的距离确定高度。</li>
+</ul>
+<p><strong>圆柱体</strong>：英文命令：<code>CYLINDER</code><br>创建三维实心圆柱体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>在 UCS 的 XY 平面或与之平行的平面绘制圆柱体的底面。</li>
+<li>在 Z 轴方向上指定圆柱体的高度。<br><strong>底面的画法</strong>：<br>圆心半径、三点、两点、相切相切半径、椭圆（椭圆画法：轴端点、中心）。<br><strong>指定高度</strong>：两点、轴端点。</li>
+</ol>
+<p><strong>圆锥体</strong>：英文命令：<code>CONE</code><br>创建三维实心圆锥体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>在 UCS 的 XY 平面或与之平行的平面绘制圆锥体的底面。</li>
+<li>指定顶面半径（默认为 0，即圆锥）。</li>
+<li>在 Z 轴方向上指定圆锥体的高度。<br><strong>底面的画法</strong>：<br>圆心半径、三点、两点、相切相切半径、椭圆（椭圆画法：轴端点、中心）。<br><strong>指定高度</strong>：两点、轴端点。</li>
+</ol>
+<h3 id="8-5-创建球体、棱锥体、楔体、圆环体"><a href="#8-5-创建球体、棱锥体、楔体、圆环体" class="headerlink" title="8-5 创建球体、棱锥体、楔体、圆环体"></a>8-5 创建球体、棱锥体、楔体、圆环体</h3><p><strong>球体</strong>：英文命令：<code>SPHERE</code><br>创建三维实心球体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>指定球心。</li>
+<li>指定球体的半径或直径。<br><strong>球体的其它画法</strong>：</li>
+</ol>
+<ul>
+<li><strong>三点法</strong>：通过指定三个点来定义圆环的最大截面和位置。</li>
+<li><strong>两点法</strong>：通过两个端点来定义球体直径的大小。</li>
+<li><strong>切点半径法</strong>：通过两个相切的对象和指定的半径来创建球体。</li>
+</ul>
+<p><strong>棱锥体</strong>：英文命令：<code>PYRAMID</code><br>创建三维实体棱锥体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>在 UCS 的 XY 平面或与之平行的平面绘制棱锥体的底面。</li>
+<li>指定顶面半径（默认为 0，即棱锥）。</li>
+<li>在 Z 轴方向上指定棱锥体的高度。<br><strong>说明</strong>：棱锥体的底面是正多边形，默认四边形，使用中心、外切的方式来绘制。<br><strong>底面的其它画法</strong>：</li>
+<li>中心、内接，画多边形。</li>
+<li>指定边长画多边形。</li>
+<li>用侧面命令，修改多边形的边数。</li>
+</ol>
+<p><strong>楔体</strong>：英文命令：<code>WEDGE</code> 快捷键：<code>WE</code><br>创建三维实心楔形体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>在 UCS 的 XY 平面或与之平行的平面绘制楔形体的底面矩形。</li>
+<li>在 Z 轴方向上指定楔形体的高度。<br><strong>底面的画法</strong>：与长方体底面画法类似（指定角点或中心点，并定义长宽或边长）。</li>
+</ol>
+<p><strong>圆环体</strong>：英文命令：<code>TORUS</code> 快捷键：<code>TOR</code><br>创建圆环形三维实体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>指定圆环体的圆心、半径或直径。</li>
+<li>指定圆管的半径或直径。<br><strong>圆环中心的其它画法</strong>：</li>
+</ol>
+<ul>
+<li><strong>三点法</strong>：通过指定三个点来定义圆环的平面和位置。</li>
+<li><strong>两点法</strong>：通过两个端点来定义圆环直径的方向和大小。</li>
+<li><strong>切点半径法</strong>：通过两个相切的对象和指定的半径来创建圆环。</li>
+</ul>
+<h3 id="8-6-多段体及基本体组合练习"><a href="#8-6-多段体及基本体组合练习" class="headerlink" title="8-6 多段体及基本体组合练习"></a>8-6 多段体及基本体组合练习</h3><p><strong>多段体</strong>：英文命令：<code>POLYSOLID</code><br>创建三维墙状多段体。可以创建具有固定高度和宽度的直线段和曲线段的墙。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>定义多段体的高度、宽度、对正方式。</li>
+<li>绘制多段线。</li>
+</ol>
+<ul>
+<li><strong>对象</strong>：将已有的多段线转化为多段体。</li>
+<li><strong>对正</strong>：定义拐角处的对正方式（左、居中、右）。</li>
+</ul>
+<p><strong>组合练习</strong>（可补充绘图步骤及图示）：</p>
+<ul>
+<li>多段体：200<em>200</em>20*2（120）</li>
+<li>长方体：110<em>110</em>15</li>
+<li>圆柱体：φ4*30</li>
+<li>楔体：80<em>36</em>12</li>
+<li>六棱锥：320*φ56（外切）</li>
+<li>球体：Sφ40</li>
+</ul>
+<h3 id="8-7-布尔运算及练习"><a href="#8-7-布尔运算及练习" class="headerlink" title="8-7 布尔运算及练习"></a>8-7 布尔运算及练习</h3><p>布尔运算是 CAD 软件中非常重要的一项功能，它允许用户通过并集、交集和差集等操作来创建复杂的几何形状。</p>
+<p><strong>并集</strong>：英文命令：<code>UNION</code> 快捷键：<code>UNI</code><br>将两个或多个实体合并为一个新实体。</p>
+<ul>
+<li>必须选择类型相同的对象进行合并，合并后保留第一个对象的属性。<br><strong>操作步骤</strong>：</li>
+</ul>
+<ol>
+<li>点击图标或者输入快捷键。</li>
+<li>选择要合并的两个或多个对象，可以框选。</li>
+<li>确定。</li>
+</ol>
+<p><strong>差集</strong>：英文命令：<code>SUBTRACT</code> 快捷键：<code>SU</code><br>从一个实体中移除另一个实体的部分。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入快捷键。</li>
+<li>选择要保留的对象。</li>
+<li>选择要减去的对象。</li>
+</ol>
+<p><strong>交集</strong>：英文命令：<code>INTERSECT</code> 快捷键：<code>IN</code><br>仅保留两个或多个实体共有的部分。合并后保留第一个对象的属性。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入快捷键。</li>
+<li>选择要交集的两个或多个对象，可以框选。</li>
+<li>确定。</li>
+</ol>
+<h3 id="8-8-拉伸建模及练习"><a href="#8-8-拉伸建模及练习" class="headerlink" title="8-8 拉伸建模及练习"></a>8-8 拉伸建模及练习</h3><p><strong>拉伸</strong>：英文命令：<code>EXTRUDE</code> 快捷键：<code>EXT</code><br>在 CAD 中进行拉伸建模，是使用频率非常高的三维建模方法，它允许用户将二维曲线拉伸成三维实体或曲面。</p>
+<ul>
+<li>闭合的多段线和面域可以拉伸生成实体，否则是曲面。<br><strong>操作步骤</strong>：</li>
+</ul>
+<ol>
+<li>在 XY 平面或者与之平行的平面，绘制二维曲线。</li>
+<li>点击图标或者输入快捷键。</li>
+<li>选择拉伸的对象。</li>
+<li>指定拉伸的方向和距离。<br><strong>选项说明</strong>：</li>
+</ol>
+<ul>
+<li><strong>DELOBJ 系统变量</strong>：控制创建实体或曲面后是否自动删除轮廓对象。 -1 提示，0 保留，3 删除（默认）。</li>
+<li><strong>方向</strong>：默认为二维曲线所在平面的法向，可指定其它方向。</li>
+<li><strong>倾斜角</strong>：拔模斜度。</li>
+</ul>
+<h3 id="8-9-快速切换草绘平面的方法"><a href="#8-9-快速切换草绘平面的方法" class="headerlink" title="8-9 快速切换草绘平面的方法"></a>8-9 快速切换草绘平面的方法</h3><p>在 CAD 三维建模时，切换草绘平面是一个常用的操作，在功能区坐标面板，选择不同的正交 UCS，可快速切换草绘平面。<br><strong>正交 UCS</strong>：俯视、仰视、左视、右视、前视、后视。</p>
+<h3 id="8-10-旋转建模及练习"><a href="#8-10-旋转建模及练习" class="headerlink" title="8-10 旋转建模及练习"></a>8-10 旋转建模及练习</h3><p><strong>旋转</strong>：英文命令：<code>REVOLVE</code> 快捷键：<code>REV</code><br>旋转建模是 CAD 常用的三维建模技术，它允许用户将二维轮廓沿着一个轴线旋转一定角度，以创建复杂的三维形状。</p>
+<ul>
+<li>闭合的多段线、面域可以旋转生成实体，其它曲线生成曲面。<br><strong>操作步骤</strong>：</li>
+</ul>
+<ol>
+<li>在 XY 平面或者与之平行的平面，绘制二维草图。</li>
+<li>点击图标或者输入快捷键。</li>
+<li>选择要旋转的对象。</li>
+<li>指定旋转的轴线或选择坐标轴。</li>
+<li>指定旋转的角度。<br><strong>选项说明</strong>：</li>
+</ol>
+<ul>
+<li><strong>模式</strong>：实体&#x2F;曲面。</li>
+<li><strong>起点角度</strong>：默认 X 轴正向为起点（0 度）。</li>
+<li><strong>反转</strong>：默认逆时针旋转建模，反转即按顺时针方向。</li>
+<li><strong>DELOBJ 系统变量</strong>：控制创建实体或曲面后是否自动删除轮廓对象。 -1 提示，0 保留，3 删除（默认）。</li>
+</ul>
+<h3 id="8-11-放样建模"><a href="#8-11-放样建模" class="headerlink" title="8-11 放样建模"></a>8-11 放样建模</h3><p><strong>放样</strong>：英文命令：<code>LOFT</code><br>通过放样功能，用户可以根据一系列的横截面曲线创建复杂的三维实体或曲面。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>绘制两个或者多个二维横截面曲线。</li>
+<li>点击图标或者输入命令。</li>
+<li>按放样次序选择横截面。</li>
+<li>选择放样类型、设置参数。</li>
+<li>确定。<br><strong>放样类型及参数</strong>：</li>
+</ol>
+<ul>
+<li><strong>导向</strong>：用导向曲线控制放样的形状，导向曲线可以是直线或曲线。</li>
+<li><strong>路径</strong>：指定放样实体或曲面的单一路径。</li>
+<li><strong>仅横截面</strong>：使用放样设置对话框对放样结果进行控制。<ul>
+<li><strong>直纹</strong>：指定生成实体或曲面的横截面之间的母线为直纹。</li>
+<li><strong>平滑拟合</strong>：指定生成实体或曲面的横截面之间的母线是平滑的。</li>
+<li><strong>法线指向</strong>：控制生成实体或曲面横截面处的法向。</li>
+<li><strong>拔模斜度</strong>：控制实体或曲面的起点和端点处的拔模角度和幅值。<ul>
+<li>起始角度：指定起点的拔模角度。</li>
+<li>起点幅值：控制曲面到起点横截面在拔模方向上的相对距离。</li>
+<li>端点角度：指定端点的拔模角度。</li>
+<li>端点幅值：控制曲面到端点横截面在拔模方向上的相对距离。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-12-放样建模练习"><a href="#8-12-放样建模练习" class="headerlink" title="8-12 放样建模练习"></a>8-12 放样建模练习</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-13-创建螺旋、扫描建模"><a href="#8-13-创建螺旋、扫描建模" class="headerlink" title="8-13 创建螺旋、扫描建模"></a>8-13 创建螺旋、扫描建模</h3><p><strong>螺旋</strong>：英文命令：<code>HELIX</code><br>创建二维或三维螺旋线。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>指定底面的中心点。</li>
+<li>指定底面半径&#x2F;直径。</li>
+<li>指定顶面半径&#x2F;直径。</li>
+<li>定义螺旋参数（圈数、圈高、旋转方向）。</li>
+<li>指定螺旋高度。</li>
+</ol>
+<p><strong>扫描</strong>：英文命令：<code>SWEEP</code><br>扫描命令是一种强大的三维建模工具，它允许用户将一个二维形状沿着一个路径移动，从而创建出一个新的三维实体或曲面。这个功能特别适用于制作复杂的几何形状，如管道、螺旋形结构等。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择扫描对象。</li>
+<li>定义扫描参数。</li>
+<li>选择扫描路径。<br><strong>扫描参数</strong>：</li>
+</ol>
+<ul>
+<li><strong>对齐</strong>：用于控制扫描对象与路径之间的空间关系。</li>
+<li><strong>基点</strong>：扫描动作的参照点。</li>
+<li><strong>比例</strong>：控制扫描过程中截面尺寸的变化。</li>
+<li><strong>扭曲</strong>：控制扫描对象在路径上的旋转角度。</li>
+</ul>
+<h3 id="8-14-扫描建模练习"><a href="#8-14-扫描建模练习" class="headerlink" title="8-14 扫描建模练习"></a>8-14 扫描建模练习</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-15-按住并拖动的操作技巧"><a href="#8-15-按住并拖动的操作技巧" class="headerlink" title="8-15 按住并拖动的操作技巧"></a>8-15 按住并拖动的操作技巧</h3><p><strong>按住并拖动</strong>：英文命令：<code>PRESSPULL</code><br>在 CAD 设计中，按住并拖动功能为创建复杂的三维实体提供了强大而直观的方法。通过简单的鼠标操作，就可以将边界区域转化为三维实体，并自动的进行布尔运算。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择对象或者边界区域。</li>
+<li>指定拉伸高度。</li>
+<li>可以连续拉伸下一个，按 ESC&#x2F;空格键&#x2F;回车键退出。<br><strong>功能优势</strong>：</li>
+<li>自动判断边界区域，无需转化为面域和多段线。</li>
+<li>可以排除孤岛区域，直接拉伸出孔洞。</li>
+<li>可以自动判断边界，拉伸&#x2F;移动实体表面。</li>
+<li>可以同时拉伸多个边界区域和实体表面。</li>
+<li>结合 CTRL 键，可以改变侧面的拉伸方向。</li>
+<li>可自动进行布尔运算。</li>
+</ol>
+<h3 id="8-16-圆角边及练习"><a href="#8-16-圆角边及练习" class="headerlink" title="8-16 圆角边及练习"></a>8-16 圆角边及练习</h3><p><strong>圆角边</strong>：英文命令：<code>FILLETEDGE</code><br>为实体对象的边制作圆角，即在三维实体的相邻面之间创建弧形过渡。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择边，确定。</li>
+<li>定义圆角半径。</li>
+<li>按回车&#x2F;空格键接受圆角。<br><strong>选项</strong>：</li>
+</ol>
+<ul>
+<li><strong>链</strong>：三维实体的相切边界。</li>
+<li><strong>环</strong>：三维实体的环状相连边界。</li>
+</ul>
+<h3 id="8-17-倒角边及练习"><a href="#8-17-倒角边及练习" class="headerlink" title="8-17 倒角边及练习"></a>8-17 倒角边及练习</h3><p><strong>倒角边</strong>：英文命令：<code>CHAMFEREDGE</code><br>为实体对象的边制作倒角。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择边。</li>
+<li>定义倒角距离。</li>
+<li>按回车&#x2F;空格键接受倒角。</li>
+</ol>
+<h3 id="8-18-抽壳与剖切"><a href="#8-18-抽壳与剖切" class="headerlink" title="8-18 抽壳与剖切"></a>8-18 抽壳与剖切</h3><p><strong>抽壳</strong>：英文命令：<code>SOLIDEDIT</code><br>将三维实体转换为中空壳体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择三维实体。</li>
+<li>选择要删除的面。</li>
+<li>指定壁厚（抽壳偏移距离）。</li>
+<li>按空格键退出。</li>
+</ol>
+<p><strong>剖切</strong>：英文命令：<code>SLICE</code><br>剖切现有对象创建新的三维实体和曲面。可以保留三维实体的一个或两个侧面。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择要剖切的对象。</li>
+<li>指定切面。</li>
+<li>指定保留的侧面。<br><strong>指定切面的方法</strong>：</li>
+</ol>
+<ul>
+<li><strong>三点</strong>：通过指定三个点确定剖切平面。</li>
+<li><strong>平面对象</strong>：选择用于定义剖切平面的圆、椭圆、圆弧、二维样条线或二维多段线。</li>
+<li><strong>曲面</strong>：把已创建的平面或者曲面用作剖切面。</li>
+<li><strong>Z轴</strong>：用平行于 Z 轴的平面作为剖切平面。</li>
+<li><strong>视图</strong>：用平行于当前视图方向的平面作为剖切平面。</li>
+<li><strong>XY</strong>：用平行于 XY 的平面作为剖切平面。</li>
+<li><strong>YZ</strong>：用平行于 YZ 的平面作为剖切平面。</li>
+<li><strong>ZX</strong>：用平行于 ZX 的平面作为剖切平面。</li>
+</ul>
+<h3 id="8-19-抽壳与剖切练习"><a href="#8-19-抽壳与剖切练习" class="headerlink" title="8-19 抽壳与剖切练习"></a>8-19 抽壳与剖切练习</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-20-三维阵列及练习"><a href="#8-20-三维阵列及练习" class="headerlink" title="8-20 三维阵列及练习"></a>8-20 三维阵列及练习</h3><p><strong>三维阵列</strong>：英文命令：<code>3DARRAY</code> 快捷键：<code>3A</code><br>按矩形或环形排列方式创建对象的空间阵列。</p>
+<ul>
+<li>对于三维矩形阵列，除行数和列数外，用户还可以指定 Z 方向的层数。</li>
+<li>对于三维环形阵列，用户可以通过空间中的任意两点指定旋转轴。<br><strong>操作步骤</strong>：</li>
+</ul>
+<ol>
+<li>点击图标或者输入快捷键。</li>
+<li>选择对象。</li>
+<li>选择阵列类型。</li>
+<li>定义阵列参数。</li>
+</ol>
+<h3 id="8-21-三维镜像及练习"><a href="#8-21-三维镜像及练习" class="headerlink" title="8-21 三维镜像及练习"></a>8-21 三维镜像及练习</h3><p><strong>三维镜像</strong>：英文命令：<code>MIRROR3D</code><br>通过指定的镜像平面创建选定对象的镜像副本。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择对象。</li>
+<li>指定镜像平面。</li>
+<li>定义是否删除源对象。<br><strong>指定镜像平面的方法</strong>：</li>
+</ol>
+<ul>
+<li><strong>三点</strong>：通过指定三个点确定镜像平面。</li>
+<li><strong>对象</strong>：选择用于定义镜像平面的圆、圆弧或二维多段线。</li>
+<li><strong>最近的</strong>：最近使用过的镜像平面。</li>
+<li><strong>Z轴</strong>：用平行于 Z 轴的平面作为镜像平面。</li>
+<li><strong>视图</strong>：用平行于当前视图方向的平面作为镜像平面。</li>
+<li><strong>XY 平面</strong>：用平行于 XY 的平面作为镜像平面。</li>
+<li><strong>YZ 平面</strong>：用平行于 YZ 的平面作为镜像平面。</li>
+<li><strong>ZX 平面</strong>：用平行于 ZX 的平面作为镜像平面。</li>
+</ul>
+<h3 id="8-22-实体的移动、旋转、缩放、复制"><a href="#8-22-实体的移动、旋转、缩放、复制" class="headerlink" title="8-22 实体的移动、旋转、缩放、复制"></a>8-22 实体的移动、旋转、缩放、复制</h3><p><strong>三维移动</strong>：英文命令：<code>3DMOVE</code><br>在三维视图中显示三维移动小控件，以便将三维对象在指定方向上移动指定距离。</p>
+<p><strong>三维旋转</strong>：英文命令：<code>3DROTATE</code><br>在三维视图中显示三维旋转小控件，以便将三维对象绕基点旋转。</p>
+<p><strong>三维缩放</strong>：英文命令：<code>3DSCALE</code><br>在三维视图中，显示三维缩放小控件以协助缩放三维对象。</p>
+<p><strong>小控件的默认显示</strong>：英文命令：<code>DEFAULTGIZMO</code></p>
+<ul>
+<li><strong>移动小控件</strong>：设置当选定某个对象时，默认显示三维移动小控件。</li>
+<li><strong>旋转小控件</strong>：设置当选定某个对象时，默认显示三维旋转小控件。</li>
+<li><strong>缩放小控件</strong>：设置当选定某个对象时，默认显示三维缩放小控件。</li>
+<li><strong>无小控件</strong>：选定某个对象时，不显示小控件。</li>
+</ul>
+<h3 id="8-23-三维实体的旋转、移动应用实例"><a href="#8-23-三维实体的旋转、移动应用实例" class="headerlink" title="8-23 三维实体的旋转、移动应用实例"></a>8-23 三维实体的旋转、移动应用实例</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-24-三维对齐及练习"><a href="#8-24-三维对齐及练习" class="headerlink" title="8-24 三维对齐及练习"></a>8-24 三维对齐及练习</h3><p><strong>三维对齐</strong>：英文命令：<code>3DALIGN</code> 快捷键：<code>3AL</code><br>在三维空间中将对象与其他对象对齐。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或输入快捷键。</li>
+<li>选择对象。</li>
+<li>指定基点。</li>
+<li>指定目标点。</li>
+</ol>
+<h3 id="8-25-干涉、分割"><a href="#8-25-干涉、分割" class="headerlink" title="8-25 干涉、分割"></a>8-25 干涉、分割</h3><p><strong>干涉</strong>：英文命令：<code>INTERFERE</code><br>通过两组选定三维实体之间的干涉创建临时三维实体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择第一组对象。</li>
+<li>选择第二组对象。</li>
+<li>干涉检查，选择是否保留干涉对象。</li>
+<li>关闭对话框。</li>
+</ol>
+<p><strong>分割</strong>：英文命令：<code>SOLIDEDIT</code><br>将具有多个不连续部分的三维实体对象分割为独立的三维实体。<br>并集或差集操作可导致生成一个由多个连续体组成的三维实体。可以将这些实体分割为独立的三维实体。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择要分割的三维实体。</li>
+<li>按空格键退出。</li>
+</ol>
+<h3 id="8-26-UCS-坐标系的设置与控制"><a href="#8-26-UCS-坐标系的设置与控制" class="headerlink" title="8-26 UCS 坐标系的设置与控制"></a>8-26 UCS 坐标系的设置与控制</h3><p>用户坐标系（UCS）是一个可移动的笛卡尔坐标系统，它允许用户根据需要定义坐标轴的方向。UCS 在三维建模中非常有用，它可以帮助用户更精确地输入坐标、创建和编辑对象，以及在特定的工作平面上进行操作。</p>
+<p><strong>主要操作</strong>：</p>
+<ol>
+<li><strong>设置 UCS 的原点和方向</strong>：可以通过点击图标或者输入命令来设置 UCS。</li>
+<li><strong>移动和旋转 UCS</strong>：可以通过点击 UCS 图标并使用其夹点来手动移动和旋转 UCS。</li>
+<li><strong>保存和恢复 UCS 设置</strong>：可以保存当前的 UCS，这样可以在需要时快速恢复。</li>
+<li><strong>与特定对象对齐 UCS</strong>：可以将 UCS 与三维模型中的特定面或边对齐，这有助于在特定的表面上进行建模和编辑。</li>
+</ol>
+<p><strong>常用 UCS 相关命令与图标</strong>：</p>
+<ul>
+<li><strong>原点处显示 UCS</strong>：英文命令：<code>UCSICON</code>，仅在原点处显示 UCS 图标。</li>
+<li><strong>显示 UCS</strong>：英文命令：<code>UCSICON</code>，在原点处或视口角点处显示 UCS 图标。</li>
+<li><strong>隐藏 UCS</strong>：英文命令：<code>UCSICON</code>，隐藏 UCS 图标。</li>
+<li><strong>X 轴旋转 UCS</strong>：英文命令：<code>UCS</code>，绕 X 轴旋转用户坐标系。</li>
+<li><strong>Y 轴旋转 UCS</strong>：英文命令：<code>UCS</code>，绕 Y 轴旋转用户坐标系。</li>
+<li><strong>Z 轴旋转 UCS</strong>：英文命令：<code>UCS</code>，绕 Z 轴旋转用户坐标系。</li>
+<li><strong>视图对齐 UCS</strong>：英文命令：<code>UCS</code>，将用户坐标系的 XY 平面与屏幕对齐。</li>
+<li><strong>对象对齐 UCS</strong>：英文命令：<code>UCS</code>，将用户坐标系与选定对象对齐。</li>
+<li><strong>面对齐 UCS</strong>：英文命令：<code>UCS</code>，将用户坐标系与三维实体上的面对齐。</li>
+<li><strong>UCS 图标特性</strong>：英文命令：<code>UCSICON</code>，控制 UCS 图标的样式、大小和颜色。</li>
+<li><strong>命名 UCS</strong>：英文命令：<code>UCSMAN</code>，管理已定义的用户坐标系。</li>
+<li>**世界坐标系 (WCS)**：英文命令：<code>UCS</code>，将当前用户坐标系设置为世界坐标系。</li>
+<li><strong>上一个 UCS</strong>：英文命令：<code>UCS</code>，恢复上一个用户坐标系。</li>
+<li><strong>原点 UCS</strong>：英文命令：<code>UCS</code>，通过移动原点来定义新的用户坐标系。</li>
+<li><strong>Z 轴矢量 UCS</strong>：英文命令：<code>UCS</code>，将用户坐标系与指定的正向 Z 轴对齐。</li>
+<li><strong>三点 UCS</strong>：英文命令：<code>UCS</code>，使用三个点定义新的用户坐标系。</li>
+</ul>
+<h3 id="8-27-自定义-UCS-建模应用实例"><a href="#8-27-自定义-UCS-建模应用实例" class="headerlink" title="8-27 自定义 UCS 建模应用实例"></a>8-27 自定义 UCS 建模应用实例</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-28-实体面的编辑（同步建模）"><a href="#8-28-实体面的编辑（同步建模）" class="headerlink" title="8-28 实体面的编辑（同步建模）"></a>8-28 实体面的编辑（同步建模）</h3><p>实体面的编辑也就是同步建模。同步建模融合了直接建模的灵活性和参数化设计的精确控制，可以直接在模型上进行各种操作，无需考虑复杂的特征历史或参数关系，大大提高了设计效率。<br>主要编辑方法有：拉伸面、倾斜面、移动面、复制面、偏移面、删除面、旋转面、着色面。</p>
+<p><strong>拉伸面</strong>：英文命令：<code>SOLIDEDIT</code><br>按指定的距离或沿某条路径拉伸三维实体的选定平面，拉伸操作可以增加或减少实体的体积。</p>
+<ul>
+<li>输入正值可向外侧拉伸面，输入负值可向内侧拉伸面。</li>
+<li><strong>倾斜角</strong>：将边倒角至面。</li>
+<li><strong>路径</strong>：沿选定的直线或曲线拉伸面。</li>
+</ul>
+<p><strong>倾斜面</strong>：英文命令：<code>SOLIDEDIT</code><br>将选定的实体面沿着一个预设的轴线倾斜一定的角度。常用于在实体上创建特定角度的倾斜特征，如为了制造方便而设计的拔模角度。</p>
+<p><strong>移动面</strong>：英文命令：<code>SOLIDEDIT</code><br>将三维实体上的面在指定方向上移动指定距离。可以通过移动面来更改对象的位置，在三维空间中重新定位实体面。例如可以移动凸台、孔的位置。</p>
+<p><strong>复制面</strong>：英文命令：<code>SOLIDEDIT</code><br>复制三维实体上的面，从而生成面域或实体。通过面的原始方向和轮廓创建新对象。可将结果用作创建新三维实体的参照。</p>
+<p><strong>偏移面</strong>：英文命令：<code>SOLIDEDIT</code><br>在实体面上创建等距的断面，增加或减少实体厚度。可以修改弧面的半径。</p>
+<p><strong>删除面</strong>：英文命令：<code>SOLIDEDIT</code><br>删除三维实体上的面。使用此选项可删除凸台、孔、圆角和倒角边。</p>
+<p><strong>旋转面</strong>：英文命令：<code>SOLIDEDIT</code><br>绕指定轴线旋转实体面。旋转面常用于创建对称的几何形状或模拟物体的旋转运动。<br><strong>定义旋转轴的方法</strong>：</p>
+<ul>
+<li><strong>两点</strong>：指定两点来确定旋转轴，轴的正方向由第一个选择点指向第二个选择点。</li>
+<li><strong>经过对象的轴</strong>：通过图形对象来定义旋转轴。若选择直线，则所选直线即是旋转轴。若选择圆或圆弧，则旋转轴通过圆心且垂直于圆或圆弧所在的平面。</li>
+<li><strong>视图</strong>：旋转轴垂直于当前视图，并通过拾取点。</li>
+<li><strong>X 轴、Y 轴、Z 轴</strong>：旋转轴平行于 x、y、z 轴，并通过拾取点。旋转轴的正方向与坐标轴的正方向一致。</li>
+<li><strong>指定旋转角度</strong>：输入正或负的旋转角，旋转角的正方向由右手螺旋法则确定。</li>
+<li><strong>参照</strong>：该选项允许用户指定旋转的起始参考角和终止参考角，这两个角度的差值就是实际的旋转角，此选项常常用来使表面从当前的位置旋转到另一指定的方位。</li>
+</ul>
+<p><strong>着色面</strong>：英文命令：<code>SOLIDEDIT</code><br>更改三维实体上选定面的颜色。</p>
+<h3 id="8-29-实体面编辑应用实例"><a href="#8-29-实体面编辑应用实例" class="headerlink" title="8-29 实体面编辑应用实例"></a>8-29 实体面编辑应用实例</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em> (测量快捷键：<code>MEA</code>)</p>
+</blockquote>
+<h3 id="8-30-实体边编辑、快速创建轴侧图"><a href="#8-30-实体边编辑、快速创建轴侧图" class="headerlink" title="8-30 实体边编辑、快速创建轴侧图"></a>8-30 实体边编辑、快速创建轴侧图</h3><p>实体边的编辑：提取边、压印、着色边、复制边。</p>
+<p><strong>提取边</strong>：英文命令：<code>XEDGES</code><br>通过三维实体的边创建线框几何图形。运用提取边可以快速创建零件的轴侧图。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择三维实体。</li>
+<li>确定。</li>
+</ol>
+<p><strong>压印</strong>：英文命令：<code>IMPRINT</code><br>将二维几何图形压印到三维实体上。压印操作要求压印的对象必须与三维实体的某一面共面或相交，压印后，压印对象将成为实体的一部分。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择三维实体或者曲面。</li>
+<li>选择压印对象如圆、直线、样条等。</li>
+<li>参数设置：是否删除源对象。</li>
+<li>按空格或者回车键完成压印。<br><strong>删除压印边</strong>：</li>
+<li>删除命令或者输入快捷键 <code>E</code>。</li>
+<li>按 <code>CTRL</code> 键，选择压印边。</li>
+<li>确认。</li>
+</ol>
+<p><strong>着色边</strong>：英文命令：<code>SOLIDEDIT</code><br>更改三维实体上选定边的颜色。着色边命令高于“图层”命令；着色边一般用于二维线框的观察；视觉样式选择二维线框、线框、隐藏或带边缘着色，都可以观察到着色边。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择边。</li>
+<li>指定颜色。</li>
+<li>退出。</li>
+</ol>
+<p><strong>复制边</strong>：英文命令：<code>SOLIDEDIT</code><br>将三维实体上的单个或多个边线精确地复制到其他指定位置。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>选择三维实体的边线，可多选。</li>
+<li>指定基点。</li>
+<li>指定目标点。</li>
+<li>退出。</li>
+</ol>
+<h3 id="8-31-截面平面、生成截面块模型"><a href="#8-31-截面平面、生成截面块模型" class="headerlink" title="8-31 截面平面、生成截面块模型"></a>8-31 截面平面、生成截面块模型</h3><p><strong>截面平面</strong>：英文命令：<code>SECTIONPLANE</code><br>用一个虚拟的剖切平面，将三维实体剖开，来观察它的内部结构。<br><strong>操作步骤</strong>：</p>
+<ol>
+<li>点击图标或者输入命令。</li>
+<li>定位截面平面。</li>
+<li>选择截面类型。</li>
+<li>编辑截面属性。</li>
+<li>移动和调整截面。</li>
+<li>生成和管理截面块。</li>
+<li>查看和分析截面。</li>
+</ol>
+<p><strong>活动截面</strong>：英文命令：<code>LIVESECTION</code><br>打开或关闭截面对象的活动截面状态。打开时，将显示与截面对象相交的三维对象的横截面。活动截面仅可以与使用 <code>SECTIONPLANE</code> 创建的对象一起使用。</p>
+<p><strong>添加折弯</strong>：英文命令：<code>SECTIONPLANEJOG</code><br>将折弯添加到截面对象。创建截面对象时可以将折弯或角度插入其中。将在截面线上创建折弯。创建的折弯线段与截面线成90度角。</p>
+<p><strong>生成截面</strong>：英文命令：<code>SECTIONPLANETOBLOCK</code><br>打开“生成截面&#x2F;标高”对话框。为保存并重复使用的横截面指定显示设置。</p>
+<p><strong>平面摄影</strong>：英文命令：<code>FLATSHOT</code><br>基于当前视图创建所有三维对象的二维表示。所有三维实体、曲面和网格的边均被视线投影到与观察平面平行的平面上。这些边的二维表示作为块插入到 UCS 的 XY 平面上。可以分解此块以进行其他更改。</p>
+<h3 id="8-32-创建立体剖面的方法"><a href="#8-32-创建立体剖面的方法" class="headerlink" title="8-32 创建立体剖面的方法"></a>8-32 创建立体剖面的方法</h3><ul>
+<li><strong>方法一</strong>：所有剖面均垂直于同一平面，用折弯截面平面创建。</li>
+<li><strong>方法二</strong>：所有剖面不是垂直于同一平面，用剖切+并集创建。</li>
+</ul>
+<h3 id="8-33-三维实体的尺寸标注"><a href="#8-33-三维实体的尺寸标注" class="headerlink" title="8-33 三维实体的尺寸标注"></a>8-33 三维实体的尺寸标注</h3><p><strong>CAD 三维尺寸标注的方法</strong></p>
+<ol>
+<li><strong>激活二维捕捉和三维捕捉</strong>：以精确的指定尺寸界线的原点。</li>
+<li><strong>调整 UCS（用户坐标系统）</strong>：将 UCS 放置在需要添加标注的对象面上，以便尺寸标注与对象的实际表面对齐。</li>
+<li><strong>放置尺寸标注</strong>：在“注释”选项卡中选择相应的标注工具，在三维模型上放置尺寸，尺寸文本要保持向上的趋势。</li>
+</ol>
+<p><strong>三维标注的注意事项</strong></p>
+<ol>
+<li>避免遮挡：确保标注不会遮挡重要图形元素或其他标注。</li>
+<li>字体一致性：尺寸文字保持统一的样式、大小。</li>
+<li>方向一致性：平行平面的尺寸文字保持一致的方向。</li>
+<li>合理利用空间：优先选择模型周围未使用的空间放置标注。</li>
+<li>考虑观察角度：从主要观察角度可见的位置放置关键标注。</li>
+<li>使用辅助视图：复杂模型中，可创建局部放大视图或剖面视图进行标注。</li>
+</ol>
+<p><strong>坐标系的设置是进行精确标注的基础</strong>：</p>
+<ul>
+<li>**面(F)**：将 UCS 动态对齐到三维对象的面。这在标注平面对象时非常有用，可以确保标注与对象表面平行。</li>
+<li>**对象(OB)**：使用特定对象（如圆弧、圆、标注、线等）来定义新的 UCS。这种方法特别适合在复杂几何形状上进行标注。</li>
+<li><strong>3点（3）</strong>：通过指定三个点来定义新的 UCS。这种方法可以灵活地创建任意方向的坐标系，适用于非标准几何形状的标注。</li>
+<li><strong>视图（V）</strong>：以平行于屏幕的平面为 XY 平面，建立新的坐标系。这有助于在进行屏幕截图或演示时保持标注的一致性。</li>
+</ul>
+<p><strong>在设置 UCS 时，还需注意以下几点</strong>：</p>
+<ul>
+<li><strong>坐标轴方向</strong>：确保 X、Y 轴的方向与待标注的对象相匹配，避免尺寸文本反向或颠倒。</li>
+<li><strong>原点位置</strong>：根据标注需求选择合适的原点位置，通常选择在待标注对象的关键点上。</li>
+<li><strong>Z轴方向</strong>：通过指定 Z 轴方向，可以进一步精确控制 UCS 的方位。</li>
+</ul>
+<h3 id="8-34-三维建模综合练习（一）"><a href="#8-34-三维建模综合练习（一）" class="headerlink" title="8-34 三维建模综合练习（一）"></a>8-34 三维建模综合练习（一）</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-35-三维建模综合练习（二）"><a href="#8-35-三维建模综合练习（二）" class="headerlink" title="8-35 三维建模综合练习（二）"></a>8-35 三维建模综合练习（二）</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-36-三维建模综合练习（三）"><a href="#8-36-三维建模综合练习（三）" class="headerlink" title="8-36 三维建模综合练习（三）"></a>8-36 三维建模综合练习（三）</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-37-三维建模综合练习（四）"><a href="#8-37-三维建模综合练习（四）" class="headerlink" title="8-37 三维建模综合练习（四）"></a>8-37 三维建模综合练习（四）</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-38-三维建模综合练习（五）"><a href="#8-38-三维建模综合练习（五）" class="headerlink" title="8-38 三维建模综合练习（五）"></a>8-38 三维建模综合练习（五）</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-39-三维建模综合练习（六）"><a href="#8-39-三维建模综合练习（六）" class="headerlink" title="8-39 三维建模综合练习（六）"></a>8-39 三维建模综合练习（六）</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
+<h3 id="8-40-三维建模综合练习（七）"><a href="#8-40-三维建模综合练习（七）" class="headerlink" title="8-40 三维建模综合练习（七）"></a>8-40 三维建模综合练习（七）</h3><blockquote>
+<p><em>（可补充绘图步骤及图示）</em></p>
+</blockquote>
 
       
     </div>

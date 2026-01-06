@@ -225,8 +225,8 @@
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
         <path d="M21 3v5h-5"></path>
       </svg>
-      <time datetime="2026-01-02">
-        更新于 2026-01-02
+      <time datetime="2026-01-06">
+        更新于 2026-01-06
       </time>
     </span>
   
@@ -240,7 +240,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      675 字
+      1.5k 字
     </span>
   
 
@@ -282,6 +282,37 @@
 <p>Github+Jsdelivr+PicGo+Typora搭建图床</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1964009739223564323">https://zhuanlan.zhihu.com/p/1964009739223564323</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/CSDN_JAVA_CC/article/details/139594540">https://blog.csdn.net/CSDN_JAVA_CC/article/details/139594540</a></p>
+<h2 id="解决过的问题"><a href="#解决过的问题" class="headerlink" title="解决过的问题"></a>解决过的问题</h2><h3 id="标签无法正确生成"><a href="#标签无法正确生成" class="headerlink" title="标签无法正确生成"></a>标签无法正确生成</h3><ul>
+<li><strong>空白情况</strong>：在myblog&#x2F;source 目录下没有tags文件夹，且文件夹里面没有index.md</li>
+<li><strong>有页面情况但是无法显示所有标签</strong>：需要再markdown头部里面添加 —title: 标签 layout: tags —</li>
+</ul>
+<p>这是 Hexo 的 **“布局 - 模板” 映射逻辑 **，核心是 Hexo 通过<code>layout</code>配置来匹配对应的渲染模板，具体原理如下：</p>
+<ol>
+<li>Hexo 的 “页面 - 布局 - 模板” 关联逻辑</li>
+</ol>
+<p>Hexo 的页面渲染遵循「<strong>页面配置→布局名→模板文件</strong>」的映射规则：</p>
+<ul>
+<li>你在<code>source/tags/index.md</code>中写了<code>layout: tags</code>，表示这个页面要使用名为<code>tags</code>的布局；</li>
+<li>Hexo 会自动去主题目录（<code>themes/xxx/layout/</code>）中找<strong>同名的模板文件</strong>（如<code>tags.ejs</code>&#x2F;<code>tags.html</code>）；</li>
+<li>找到模板后，Hexo 会将全局数据（如<code>site.tags</code>标签列表）传递给模板，最终渲染出页面内容。</li>
+</ul>
+<ol start="2">
+<li>之前页面空白的原因</li>
+</ol>
+<p>在你没加<code>layout: tags</code>时，Hexo 会用<strong>默认布局</strong>（通常是<code>page</code>布局）来渲染<code>/tags</code>页面：</p>
+<ul>
+<li>默认的<code>page</code>模板（如<code>page.ejs</code>）是通用的 “空白页面模板”，不会包含标签列表的渲染逻辑；</li>
+<li>所以页面只能显示标题，无法加载<code>site.tags</code>数据，呈现空白状态。</li>
+</ul>
+<ol start="3">
+<li>为什么加了<code>layout: tags</code>就生效？</li>
+</ol>
+<p>添加<code>layout: tags</code>后，Hexo 会精准匹配到主题中的<code>tags.ejs</code>模板：</p>
+<ul>
+<li>这个模板里写了读取<code>site.tags</code>、渲染标签列表的逻辑；</li>
+<li>Hexo 将标签数据传递给<code>tags.ejs</code>，模板就能把所有标签渲染出来，最终页面显示正常。</li>
+</ul>
+<p>简单说：<code>layout</code>配置是 Hexo 的 “导航路标”，告诉 Hexo 该用哪个模板来渲染当前页面，不同模板对应不同的内容逻辑（比如<code>tags</code>模板负责渲染标签列表，<code>post</code>模板负责渲染文章）。</p>
 
     </div>
 
@@ -330,7 +361,7 @@
       <div class="toc-wrapper">
         <h3 class="toc-title">目录</h3>
         <div class="toc-content">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HEXO"><span class="toc-text">HEXO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-text">主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%80%BC%E5%BE%97%E5%80%9F%E9%89%B4"><span class="toc-text">内容值得借鉴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E5%8F%8B%E4%BC%98%E7%A7%80%E5%8D%9A%E5%AE%A2"><span class="toc-text">网友优秀博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-text">操作</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HEXO"><span class="toc-text">HEXO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-text">主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%80%BC%E5%BE%97%E5%80%9F%E9%89%B4"><span class="toc-text">内容值得借鉴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E5%8F%8B%E4%BC%98%E7%A7%80%E5%8D%9A%E5%AE%A2"><span class="toc-text">网友优秀博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-text">操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">解决过的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E7%94%9F%E6%88%90"><span class="toc-text">标签无法正确生成</span></a></li></ol></li></ol></li></ol>
         </div>
       </div>
     </aside>

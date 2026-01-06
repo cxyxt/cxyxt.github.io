@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <!-- 标题 -->
-<title>不要看啦！没有文档 | 小涛的个人博客</title>
+<title>没有撰写文档！ | 小涛的个人博客</title>
 
 <!-- 网站描述 -->
 <meta name="description" content="">
@@ -15,7 +15,7 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="不要看啦！没有文档">
+<meta property="og:title" content="没有撰写文档！">
 <meta property="og:description" content="">
 <meta property="og:url" content="http://example.com/docs/index.html">
 <meta property="og:site_name" content="小涛的个人博客">
@@ -197,19 +197,149 @@
   
   <main class="main-content">
     <div class="container">
-      <div class="page-layout page-single">
-  <article class="page-article">
-    <!-- 页面头部 -->
-    <header class="page-header">
-      <h1 class="page-title">不要看啦！没有文档</h1>
+      <div class="page-layout doc-layout">
+  <!-- 文档侧边栏 -->
+  <aside class="doc-sidebar">
+  <div class="doc-sidebar-wrapper">
+    <h2 class="doc-sidebar-title">文档</h2>
+    
+    
+    
+    
+      <nav class="doc-tree">
+        
+        
+        
+          
+          <div class="tree-item" style="padding-left: 0px">
+            <div class="tree-row active">
+              
+                <span class="tree-arrow-placeholder"></span>
+              
+              
+              
+                <a href="/docs/index.html" class="tree-label">没有撰写文档！</a>
+              
+            </div>
+            
+            
+          </div>
+        
+        
+      </nav>
+    
+  </div>
+</aside>
+
+
+  <!-- 文档主内容 -->
+  <article class="doc-article">
+    <!-- 文档头部 -->
+    <header class="doc-header">
+      <h1 class="doc-title">没有撰写文档！</h1>
+      
+      <!-- 文档元信息 -->
+      <div class="doc-meta">
+        
+          <span class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 6.1H3"></path>
+              <path d="M21 12.1H3"></path>
+              <path d="M15.1 18H3"></path>
+            </svg>
+            
+            3.0k 字
+          </span>
+        
+        
+        
+
+        
+          <span class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
+              <path d="M21 3v5h-5"></path>
+            </svg>
+            更新于 2026-01-06
+          </span>
+        
+      </div>
     </header>
 
-    <!-- 页面内容 -->
-    <div class="page-content markdown-body">
-      
+    <!-- 文档内容 -->
+    <div class="doc-content markdown-body">
+      <p>你的文档页显示空白（字数为 0），核心原因是 **<code>/docs</code>页面对应的<code>index.md</code>文件中没有内容，且文档页的内容需要手动在 Markdown 文件中编写 **，具体逻辑和解决步骤如下：</p>
+<h3 id="一、核心逻辑：Hexo-的文档页-“不会自动生成内容”"><a href="#一、核心逻辑：Hexo-的文档页-“不会自动生成内容”" class="headerlink" title="一、核心逻辑：Hexo 的文档页 “不会自动生成内容”"></a>一、核心逻辑：Hexo 的文档页 “不会自动生成内容”</h3><p>Hexo 的文档页（<code>/docs</code>）本质是<strong>静态页面</strong>，它的内容来源是你在<code>source/docs/</code>目录下创建的 Markdown 文件（如<code>index.md</code>），<strong>不会自动引用其他文章 &#x2F; 标签的内容</strong>—— 你当前的<code>source/docs/index.md</code>是空的（字数显示 “0 字”），所以页面没有内容。</p>
+<h3 id="二、解决步骤：手动编写文档的-Markdown-内容"><a href="#二、解决步骤：手动编写文档的-Markdown-内容" class="headerlink" title="二、解决步骤：手动编写文档的 Markdown 内容"></a>二、解决步骤：手动编写文档的 Markdown 内容</h3><h4 id="1-找到文档页对应的-Markdown-文件"><a href="#1-找到文档页对应的-Markdown-文件" class="headerlink" title="1. 找到文档页对应的 Markdown 文件"></a>1. 找到文档页对应的 Markdown 文件</h4><p>进入 Hexo 根目录的<code>source/docs/</code>文件夹，打开<code>index.md</code>（这是<code>/docs</code>页面对应的源文件）。</p>
+<h4 id="2-在index-md中编写内容"><a href="#2-在index-md中编写内容" class="headerlink" title="2. 在index.md中编写内容"></a>2. 在<code>index.md</code>中编写内容</h4><p>在<code>index.md</code>的头部配置后添加文档内容（Markdown 格式），示例：</p>
+<p>yaml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文档首页</span><br><span class="line">date: 2026-01-06</span><br><span class="line">layout: doc  # 注意：这里的layout要和主题的文档模板名对应（比如你的模板是doc.ejs，这里就写doc）</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># 家具工艺文档库</span><br><span class="line">这里是我的家具工艺技术文档汇总，包含封边工艺、CAD操作等内容。</span><br><span class="line"></span><br><span class="line">## 一、封边工艺分类</span><br><span class="line">- EVA热熔胶封边</span><br><span class="line">- PUR热熔胶封边</span><br><span class="line">- 激光封边</span><br><span class="line"></span><br><span class="line">## 二、CAD操作教程</span><br><span class="line">- 直线转多段线</span><br><span class="line">- 模糊距离参数设置</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-补充子文档（可选，实现文档导航）"><a href="#3-补充子文档（可选，实现文档导航）" class="headerlink" title="3. 补充子文档（可选，实现文档导航）"></a>3. 补充子文档（可选，实现文档导航）</h4><p>如果需要像之前模板中的 “上下篇导航”，需要在<code>source/docs/</code>下创建子文件夹 &#x2F; 子 Markdown 文件，示例：</p>
+<ul>
+<li><code>source/docs/edge-sealing.md</code>（封边工艺文档）</li>
+<li><code>source/docs/cad-operation.md</code>（CAD 操作文档）</li>
+</ul>
+<p>并在主题配置（<code>themes/xxx/_config.yml</code>）中配置文档导航结构（参考模板中的<code>theme.docs</code>）：</p>
+<p>yaml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docs:</span><br><span class="line">  - title: 文档首页</span><br><span class="line">    path: /docs/</span><br><span class="line">  - title: 封边工艺分类</span><br><span class="line">    path: /docs/edge-sealing/</span><br><span class="line">  - title: CAD操作教程</span><br><span class="line">    path: /docs/cad-operation/</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、验证效果"><a href="#三、验证效果" class="headerlink" title="三、验证效果"></a>三、验证效果</h3><p>执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code>重启服务，访问<code>http://localhost:4000/docs/</code>，此时页面会显示你在<code>index.md</code>中编写的 Markdown 内容，同时模板会自动渲染字数、更新时间、TOC 目录等信息。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Hexo 的文档页<strong>不是 “自动聚合内容” 的页面</strong>，而是需要你手动在<code>source/docs/</code>目录下编写对应的 Markdown 文件来填充内容 —— 你当前的页面空白，就是因为<code>source/docs/index.md</code>中没有写任何内容。</p>
+<hr>
+<p>文档不是只有一页，你可以创建<strong>多个文档（多级目录 + 多篇子文档）</strong>，核心是通过<code>source/docs/</code>目录的文件结构 + 主题配置的导航逻辑来实现，具体步骤如下：</p>
+<h3 id="一、创建多文档的文件结构（在source-docs-下）"><a href="#一、创建多文档的文件结构（在source-docs-下）" class="headerlink" title="一、创建多文档的文件结构（在source/docs/下）"></a>一、创建多文档的文件结构（在<code>source/docs/</code>下）</h3><p>在 Hexo 根目录的<code>source/docs/</code>下，按 “文件夹 + Markdown 文件” 的方式组织多文档，示例结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">source/</span><br><span class="line">└── docs/</span><br><span class="line">    ├── index.md          # 文档首页（对应 /docs/）</span><br><span class="line">    ├── edge-sealing/     # 封边工艺分类文件夹</span><br><span class="line">    │   ├── index.md      # 封边工艺首页（对应 /docs/edge-sealing/）</span><br><span class="line">    │   ├── eva.md        # EVA封边文档（对应 /docs/edge-sealing/eva/）</span><br><span class="line">    │   └── pur.md        # PUR封边文档（对应 /docs/edge-sealing/pur/）</span><br><span class="line">    └── cad/              # CAD操作分类文件夹</span><br><span class="line">        ├── index.md      # CAD操作首页（对应 /docs/cad/）</span><br><span class="line">        └── line-to-poly.md # 直线转多段线文档（对应 /docs/cad/line-to-poly/）</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、给每个文档写-Markdown-内容"><a href="#二、给每个文档写-Markdown-内容" class="headerlink" title="二、给每个文档写 Markdown 内容"></a>二、给每个文档写 Markdown 内容</h3><p>每个<code>.md</code>文件都需要配置头部信息（指定<code>layout</code>和标题），示例<code>source/docs/edge-sealing/eva.md</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: EVA热熔胶封边工艺</span><br><span class="line">date: 2026-01-06</span><br><span class="line">layout: doc  # 必须和文档模板的layout名一致（比如你的模板是doc.ejs）</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># EVA热熔胶封边工艺</span><br><span class="line">EVA热熔胶封边是家具行业最常用的封边方式，核心原理是通过热熔胶机加热EVA胶...</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、配置主题的文档导航（让模板识别多文档）"><a href="#三、配置主题的文档导航（让模板识别多文档）" class="headerlink" title="三、配置主题的文档导航（让模板识别多文档）"></a>三、配置主题的文档导航（让模板识别多文档）</h3><p>在主题的<code>_config.yml</code>（如<code>themes/starter/_config.yml</code>）中，添加<code>docs</code>导航配置（对应文件结构），示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">docs:</span><br><span class="line">  - title: 文档首页</span><br><span class="line">    path: /docs/</span><br><span class="line">  - title: 封边工艺分类</span><br><span class="line">    path: /docs/edge-sealing/</span><br><span class="line">    children:  # 子文档（对应edge-sealing文件夹下的文件）</span><br><span class="line">      - title: EVA热熔胶封边</span><br><span class="line">        path: /docs/edge-sealing/eva/</span><br><span class="line">      - title: PUR热熔胶封边</span><br><span class="line">        path: /docs/edge-sealing/pur/</span><br><span class="line">  - title: CAD操作教程</span><br><span class="line">    path: /docs/cad/</span><br><span class="line">    children:</span><br><span class="line">      - title: 直线转多段线</span><br><span class="line">        path: /docs/cad/line-to-poly/</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、效果：多文档的导航与展示"><a href="#四、效果：多文档的导航与展示" class="headerlink" title="四、效果：多文档的导航与展示"></a>四、效果：多文档的导航与展示</h3><ol>
+<li><strong>文档侧边栏</strong>：模板会自动读取<code>theme.docs</code>配置，生成 “分类 + 子文档” 的侧边栏导航（比如 “封边工艺分类” 下显示 EVA、PUR 子文档）；</li>
+<li><strong>上下篇导航</strong>：模板的<code>findDocNav</code>函数会自动识别文档的层级，生成当前文档的 “上一篇 &#x2F; 下一篇”（比如<code>eva.md</code>的上一篇是封边工艺首页，下一篇是<code>pur.md</code>）；</li>
+<li><strong>访问路径</strong>：每个文档对应独立的 URL（比如<code>/docs/edge-sealing/eva/</code>），互不干扰。</li>
+</ol>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>通过 “<strong>文件结构分层 + 主题配置导航</strong>”，你可以创建任意数量的文档（支持多级子文档），每个文档都是独立的 Markdown 文件，模板会自动处理导航、TOC 目录、字数统计等功能 —— 本质是把<code>source/docs/</code>当作一个 “小型知识库目录”，手动组织文件即可实现多文档体系。</p>
+
     </div>
+
+    <!-- 文档导航 -->
+    <nav class="doc-nav">
+      
+      
+      
+        <div class="doc-nav-item prev disabled"></div>
+      
+      
+      
+        <div class="doc-nav-item next disabled"></div>
+      
+    </nav>
   </article>
+
+  <!-- 文档 TOC -->
+  
+    <aside class="doc-toc">
+      <div class="toc-wrapper">
+        <h3 class="toc-title">本页目录</h3>
+        <div class="toc-content">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%B8%E5%BF%83%E9%80%BB%E8%BE%91%EF%BC%9AHexo-%E7%9A%84%E6%96%87%E6%A1%A3%E9%A1%B5-%E2%80%9C%E4%B8%8D%E4%BC%9A%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9%E2%80%9D"><span class="toc-text">一、核心逻辑：Hexo 的文档页 “不会自动生成内容”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%A7%A3%E5%86%B3%E6%AD%A5%E9%AA%A4%EF%BC%9A%E6%89%8B%E5%8A%A8%E7%BC%96%E5%86%99%E6%96%87%E6%A1%A3%E7%9A%84-Markdown-%E5%86%85%E5%AE%B9"><span class="toc-text">二、解决步骤：手动编写文档的 Markdown 内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%AA%8C%E8%AF%81%E6%95%88%E6%9E%9C"><span class="toc-text">三、验证效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E5%A4%9A%E6%96%87%E6%A1%A3%E7%9A%84%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%EF%BC%88%E5%9C%A8source-docs-%E4%B8%8B%EF%BC%89"><span class="toc-text">一、创建多文档的文件结构（在source&#x2F;docs&#x2F;下）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BB%99%E6%AF%8F%E4%B8%AA%E6%96%87%E6%A1%A3%E5%86%99-Markdown-%E5%86%85%E5%AE%B9"><span class="toc-text">二、给每个文档写 Markdown 内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98%E7%9A%84%E6%96%87%E6%A1%A3%E5%AF%BC%E8%88%AA%EF%BC%88%E8%AE%A9%E6%A8%A1%E6%9D%BF%E8%AF%86%E5%88%AB%E5%A4%9A%E6%96%87%E6%A1%A3%EF%BC%89"><span class="toc-text">三、配置主题的文档导航（让模板识别多文档）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%95%88%E6%9E%9C%EF%BC%9A%E5%A4%9A%E6%96%87%E6%A1%A3%E7%9A%84%E5%AF%BC%E8%88%AA%E4%B8%8E%E5%B1%95%E7%A4%BA"><span class="toc-text">四、效果：多文档的导航与展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-text">总结</span></a></li></ol>
+        </div>
+      </div>
+    </aside>
+  
 </div>
+
+<!-- 移动端侧边栏切换按钮 -->
+<button class="doc-sidebar-toggle" aria-label="切换目录">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9h18"></path>
+    <path d="M3 15h18"></path>
+  </svg>
+</button>
 
     </div>
   </main>
@@ -327,6 +457,10 @@
 
   
   
+  
+    
+<script src="/js/doc-sidebar.js"></script>
+
   
 </body>
 </html>

@@ -9,14 +9,14 @@
 <title>HEXO | 小涛的个人博客</title>
 
 <!-- 网站描述 -->
-<meta name="description" content="">
+<meta name="description" content="HEXO主题与问题">
 <meta name="keywords" content="Hexo,教程">
 <meta name="author" content="小涛">
 
 <!-- Open Graph -->
 <meta property="og:type" content="article">
 <meta property="og:title" content="HEXO">
-<meta property="og:description" content="">
+<meta property="og:description" content="HEXO主题与问题">
 <meta property="og:url" content="http://example.com/2023/10/01/HEXO/index.html">
 <meta property="og:site_name" content="小涛的个人博客">
 
@@ -225,8 +225,8 @@
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
         <path d="M21 3v5h-5"></path>
       </svg>
-      <time datetime="2026-01-06">
-        更新于 2026-01-06
+      <time datetime="2026-01-14">
+        更新于 2026-01-14
       </time>
     </span>
   
@@ -240,7 +240,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      1.5k 字
+      2.9k 字
     </span>
   
 
@@ -313,6 +313,69 @@
 <li>Hexo 将标签数据传递给<code>tags.ejs</code>，模板就能把所有标签渲染出来，最终页面显示正常。</li>
 </ul>
 <p>简单说：<code>layout</code>配置是 Hexo 的 “导航路标”，告诉 Hexo 该用哪个模板来渲染当前页面，不同模板对应不同的内容逻辑（比如<code>tags</code>模板负责渲染标签列表，<code>post</code>模板负责渲染文章）。</p>
+<h3 id="文章简介显示得太长"><a href="#文章简介显示得太长" class="headerlink" title="文章简介显示得太长"></a>文章简介显示得太长</h3><p>在 Hexo Starter 主题里，文章简介显示得太长，是因为它默认会直接截取文章开头的一大段文字。你可以通过下面几种方法来精准控制简介的显示内容。</p>
+<hr>
+<p><strong>方法 1</strong>：在文章里手动设置 <code>description</code>（推荐）</p>
+<p>这是最精准的方式，你可以自己定义每篇文章的简介内容。</p>
+<ol>
+<li><p>打开你想修改的 Markdown 文章</p>
+</li>
+<li><p>在文章开头的 Front-matter 区域（就是—包裹的部分），添加一行：</p>
+<p>yaml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">description: &quot;这里写你想要显示的简短简介，比如‘这篇文章介绍了家具板材的核心知识与适用场景’&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存后重新生成静态文件，主题就会优先显示你设置的这段文字，不会再自动截取大段内容。</p>
+</li>
+</ol>
+<hr>
+<p><strong>方法2</strong>：修改主题配置文件（全局统一截取长度）</p>
+<p>如果你想让所有文章的简介都自动保持统一的短长度，可以这样设置：</p>
+<ol>
+<li><p>找到主题的配置文件 <code>themes/hexo-starter/_config.yml</code></p>
+</li>
+<li><p>搜索 <code>excerpt</code> 相关的配置项，一般会有一个 <code>length</code> 参数</p>
+</li>
+<li><p>把长度值改小，比如：</p>
+<p>yaml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 100  # 只显示前100个字符</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存后重新生成静态文件即可。</p>
+</li>
+</ol>
+<hr>
+<p><strong>方法3</strong>：在文章里用 <code>&lt;!-- more --&gt;</code> 分割符</p>
+<p>在 Markdown 文章的任意位置插入 <code>&lt;!-- more --&gt;</code>，主题会只显示分割符之前的内容作为简介，后面的内容会被隐藏，读者需要点击 “阅读全文” 才能看到。</p>
+<p>比如：</p>
+<p>markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">家具知识</span><br><span class="line">学习网站 The Wood Database 网址：www.wood-database.com</span><br><span class="line">木工爱好者论坛 网址：www.zuojiaju.com</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">板材 &gt; 中纤板，也叫密度板适用于：柜门&amp;柜体，可以做烤漆面、三氨纸面、模压面...</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="遇到应用上面方法不生效时"><a href="#遇到应用上面方法不生效时" class="headerlink" title="遇到应用上面方法不生效时"></a>遇到应用上面方法不生效时</h4><ol>
+<li>检查主题配置是否开启 <code>description</code> 优先</li>
+</ol>
+<p>Hexo Starter 主题可能默认没有开启优先读取文章 <code>description</code> 的设置，需要手动在主题配置文件里开启：</p>
+<ul>
+<li>打开 <code>themes/hexo-starter/_config.yml</code></li>
+<li>找到和文章列表相关的配置，比如 <code>post_list</code> 或 <code>excerpt</code> 模块</li>
+<li>确认是否有类似 <code>use_description: true</code> 的开关，把它设为 <code>true</code></li>
+</ul>
+<p>如果没有这个开关，说明主题默认不支持直接读取 <code>description</code>，需要用 <code>&lt;!-- more --&gt;</code> 分割符来控制简介。</p>
+<hr>
+<ol start="2">
+<li>修正 Front-matter 格式</li>
+</ol>
+<p>你的配置里，<code>description</code> 用了双引号包裹，这在 YAML 里是允许的，但要注意符号是英文半角，且前后没有多余空格。</p>
+<p>你可以改成更稳妥的写法：</p>
+<p>yaml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">description: HEXO主题与问题</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ol start="3">
+<li>强制使用 <code>&lt;!-- more --&gt;</code> 分割符（最稳妥）</li>
+</ol>
+<p>如果主题不支持 <code>description</code> 配置，直接在文章开头插入分割符，就能精准控制简介内容：</p>
+<p>markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HEXO主题与问题</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">这是文章正文的内容，会被隐藏在“阅读全文”按钮后。</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -361,7 +424,7 @@
       <div class="toc-wrapper">
         <h3 class="toc-title">目录</h3>
         <div class="toc-content">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HEXO"><span class="toc-text">HEXO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-text">主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%80%BC%E5%BE%97%E5%80%9F%E9%89%B4"><span class="toc-text">内容值得借鉴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E5%8F%8B%E4%BC%98%E7%A7%80%E5%8D%9A%E5%AE%A2"><span class="toc-text">网友优秀博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-text">操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">解决过的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E7%94%9F%E6%88%90"><span class="toc-text">标签无法正确生成</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HEXO"><span class="toc-text">HEXO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-text">主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%80%BC%E5%BE%97%E5%80%9F%E9%89%B4"><span class="toc-text">内容值得借鉴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E5%8F%8B%E4%BC%98%E7%A7%80%E5%8D%9A%E5%AE%A2"><span class="toc-text">网友优秀博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-text">操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E8%BF%87%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">解决过的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E7%94%9F%E6%88%90"><span class="toc-text">标签无法正确生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E7%AE%80%E4%BB%8B%E6%98%BE%E7%A4%BA%E5%BE%97%E5%A4%AA%E9%95%BF"><span class="toc-text">文章简介显示得太长</span></a></li></ol></li></ol></li></ol>
         </div>
       </div>
     </aside>

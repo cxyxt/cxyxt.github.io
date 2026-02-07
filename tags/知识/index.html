@@ -6,18 +6,18 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <!-- 标题 -->
-<title>爬虫部分图片无法爬取 | 小涛的个人博客</title>
+<title>小涛的个人博客</title>
 
 <!-- 网站描述 -->
 <meta name="description" content="">
-<meta name="keywords" content="Python">
+<meta name="keywords" content="">
 <meta name="author" content="小涛">
 
 <!-- Open Graph -->
-<meta property="og:type" content="article">
-<meta property="og:title" content="爬虫部分图片无法爬取">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小涛的个人博客">
 <meta property="og:description" content="">
-<meta property="og:url" content="http://example.com/2026/02/04/%E7%88%AC%E8%99%AB%E9%83%A8%E5%88%86%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E7%88%AC%E5%8F%96/index.html">
+<meta property="og:url" content="http://example.com/tags/%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="小涛的个人博客">
 
 
@@ -40,7 +40,7 @@
 
 
 <!-- 规范链接 -->
-<link rel="canonical" href="http://example.com/2026/02/04/%E7%88%AC%E8%99%AB%E9%83%A8%E5%88%86%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E7%88%AC%E5%8F%96/index.html">
+<link rel="canonical" href="http://example.com/tags/%E7%9F%A5%E8%AF%86/index.html">
 
 <!-- 主题色 -->
 <meta name="theme-color" content="#13C2C2" media="(prefers-color-scheme: light)">
@@ -86,7 +86,7 @@
         
           <li class="nav-item">
             <a href="/tags" 
-               class="nav-link ">
+               class="nav-link active">
               标签
             </a>
           </li>
@@ -171,7 +171,7 @@
       
         <li class="mobile-nav-item">
           <a href="/tags" 
-             class="mobile-nav-link ">
+             class="mobile-nav-link active">
             标签
           </a>
         </li>
@@ -197,146 +197,34 @@
   
   <main class="main-content">
     <div class="container">
-      <div class="page-layout post-layout">
-  <article class="post-article">
-    <!-- 文章头部 -->
-    <header class="post-header">
-      <h1 class="post-title">爬虫部分图片无法爬取</h1>
-      
-      <!-- 元信息 -->
-      <div class="post-meta">
-  <!-- 发布日期 -->
-  <span class="meta-item meta-date">
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
-      <line x1="16" x2="16" y1="2" y2="6"></line>
-      <line x1="8" x2="8" y1="2" y2="6"></line>
-      <line x1="3" x2="21" y1="10" y2="10"></line>
-    </svg>
-    <time datetime="2026-02-04">
-      2026-02-04
-    </time>
-  </span>
-
-  <!-- 更新日期 -->
-  
-    <span class="meta-item meta-updated">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
-        <path d="M21 3v5h-5"></path>
-      </svg>
-      <time datetime="2026-02-06">
-        更新于 2026-02-06
-      </time>
-    </span>
-  
-
-  <!-- 字数统计 -->
-  
-    <span class="meta-item meta-wordcount">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M17 6.1H3"></path>
-        <path d="M21 12.1H3"></path>
-        <path d="M15.1 18H3"></path>
-      </svg>
-      
-      657 字
-    </span>
-  
-
-  <!-- 阅读时间 -->
-  
-
-  <!-- 标签（仅在列表页显示前几个） -->
-  
-</div>
-
-      
-      <!-- 封面图 -->
-      
-    </header>
-
-    <!-- 文章内容 -->
-    <div class="post-content markdown-body">
-      <p>这种 “发现的图片数” 多于 “成功下载数” 的情况在爬虫中是<strong>非常正常的</strong>，并不是程序出错了，主要有以下几个常见原因：</p>
-<h3 id="1-链接无效或已过期"><a href="#1-链接无效或已过期" class="headerlink" title="1. 链接无效或已过期"></a>1. 链接无效或已过期</h3><ul>
-<li>网页上的图片标签可能引用了一个已经失效的链接，或者是临时生成的、已过期的 URL。</li>
-<li>这种情况下，程序会自动跳过这些无效链接，不计入成功下载数。</li>
-</ul>
-<h3 id="2-网站反爬或防盗链"><a href="#2-网站反爬或防盗链" class="headerlink" title="2. 网站反爬或防盗链"></a>2. 网站反爬或防盗链</h3><ul>
-<li>很多网站会设置图片防盗链，只允许从自己的网站域名访问图片。</li>
-<li>也有些网站会检测到爬虫的请求并拒绝提供图片，导致下载失败。</li>
-<li>你的程序已经做了基础的防盗链处理（设置了<code>Referer</code>），但仍无法突破所有限制。</li>
-</ul>
-<h3 id="3-图片是动态加载或非图片文件"><a href="#3-图片是动态加载或非图片文件" class="headerlink" title="3. 图片是动态加载或非图片文件"></a>3. 图片是动态加载或非图片文件</h3><ul>
-<li>有些图片是通过 JavaScript 动态渲染的，或者是 GIF 动图、SVG 矢量图、微信表情等非目标图片。</li>
-<li>程序会自动过滤掉这些文件，只保留静态的 jpg&#x2F;png&#x2F;webp 等格式的有效图片。</li>
-</ul>
-<h3 id="4-网络波动或超时"><a href="#4-网络波动或超时" class="headerlink" title="4. 网络波动或超时"></a>4. 网络波动或超时</h3><ul>
-<li>爬取过程中如果网络不稳定，可能会导致部分图片下载超时。</li>
-<li>为了不影响整体爬取，程序会自动跳过这些超时的图片。</li>
-</ul>
-<hr>
-<h3 id="如何优化成功率？"><a href="#如何优化成功率？" class="headerlink" title="如何优化成功率？"></a>如何优化成功率？</h3><p>如果你希望尽可能多地下载图片，可以尝试以下优化：</p>
-<ol>
-<li><strong>延长超时时间</strong>：把代码里的 <code>IMG_TIMEOUT</code> 参数从 20 秒改为 30 秒，给网络波动留更多缓冲时间。</li>
-<li><strong>增加延迟时间</strong>：把 <code>DELAY</code> 参数从 <code>(0.3, 0.8)</code> 改为 <code>(1, 2)</code>，降低爬取速度，避免被网站反爬机制识别。</li>
-<li><strong>添加更多请求头</strong>：在 <code>HEADERS</code> 中增加 <code>Cookie</code> 或 <code>Origin</code> 等字段，模拟更真实的浏览器请求。</li>
-</ol>
-
-    </div>
-
-    <!-- 标签 -->
-    
-      <div class="post-tags">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="page-layout archive-layout">
+  <div class="archive-wrapper">
+    <header class="archive-header">
+      <h1 class="archive-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
           <path d="M7 7h.01"></path>
         </svg>
+        知识
+      </h1>
+      <p class="archive-count">共 1 篇文章</p>
+    </header>
+
+    <div class="archive-content">
+      <ul class="archive-list">
         
-          <a href="/tags/Python/" class="tag-link">Python</a>
+          <li class="archive-item">
+            <span class="archive-date">2026-02-07</span>
+            <a href="/2026/02/07/%E5%B8%B8%E8%A7%81%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F/" class="archive-link">常见商业模式</a>
+          </li>
         
-      </div>
+      </ul>
+    </div>
+
+    <!-- 分页 -->
     
 
-    <!-- 版权信息 -->
-    
-      <div class="post-copyright">
-        <p><strong>本文作者：</strong>小涛</p>
-        <p><strong>本文链接：</strong><a href="http://example.com/2026/02/04/%E7%88%AC%E8%99%AB%E9%83%A8%E5%88%86%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E7%88%AC%E5%8F%96/">http://example.com/2026/02/04/%E7%88%AC%E8%99%AB%E9%83%A8%E5%88%86%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E7%88%AC%E5%8F%96/</a></p>
-        <p><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</p>
-      </div>
-    
-
-    <!-- 上一篇 / 下一篇 -->
-    <nav class="post-nav">
-      
-        <a href="/2026/02/07/%E5%B8%B8%E8%A7%81%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F/" class="post-nav-item prev">
-          <span class="post-nav-label">上一篇</span>
-          <span class="post-nav-title">常见商业模式</span>
-        </a>
-      
-      
-      
-        <a href="/2026/02/02/%E6%8F%90%E9%AB%98%E4%B8%AA%E4%BA%BA%E8%AE%A4%E7%9F%A5%E8%83%BD%E5%8A%9B/" class="post-nav-item next">
-          <span class="post-nav-label">下一篇</span>
-          <span class="post-nav-title">提高个人能力</span>
-        </a>
-      
-    </nav>
-  </article>
-
-  <!-- TOC 目录 -->
-  
-    <aside class="post-toc">
-      <div class="toc-wrapper">
-        <h3 class="toc-title">目录</h3>
-        <div class="toc-content">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%93%BE%E6%8E%A5%E6%97%A0%E6%95%88%E6%88%96%E5%B7%B2%E8%BF%87%E6%9C%9F"><span class="toc-text">1. 链接无效或已过期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BD%91%E7%AB%99%E5%8F%8D%E7%88%AC%E6%88%96%E9%98%B2%E7%9B%97%E9%93%BE"><span class="toc-text">2. 网站反爬或防盗链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%BE%E7%89%87%E6%98%AF%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E6%88%96%E9%9D%9E%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6"><span class="toc-text">3. 图片是动态加载或非图片文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BD%91%E7%BB%9C%E6%B3%A2%E5%8A%A8%E6%88%96%E8%B6%85%E6%97%B6"><span class="toc-text">4. 网络波动或超时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E6%88%90%E5%8A%9F%E7%8E%87%EF%BC%9F"><span class="toc-text">如何优化成功率？</span></a></li></ol>
-        </div>
-      </div>
-    </aside>
-  
+  </div>
 </div>
 
     </div>
@@ -455,10 +343,6 @@
 
   
   
-  
-    
-<script src="/js/doc-sidebar.js"></script>
-
   
 </body>
 </html>
